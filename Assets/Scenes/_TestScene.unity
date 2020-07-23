@@ -290,6 +290,136 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: g
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: redCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: greenCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092911680386035770, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: blueCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 7722762970604430187, guid: b937accb26e18d8428433a1db9d2e290,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,6 +479,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722762970760044256, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722762970760044256, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722762970760044256, guid: b937accb26e18d8428433a1db9d2e290,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b937accb26e18d8428433a1db9d2e290, type: 3}
