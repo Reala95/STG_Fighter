@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3894986178725130302}
+  - component: {fileID: 9223068797107470327}
   m_Layer: 0
   m_Name: Player_SolarWeapon_Lv1
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211139672950189500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.54254466, y: 4.0999975, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9028350054315427327}
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9223068797107470327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211139672950189500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7308b0d44d8e91c42a4ce4ee9bf1ce3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7217133161337060360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 394688788083133805, guid: 1838ee7deb0ac1843a9c76bf909bc2fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 394688788083133805, guid: 1838ee7deb0ac1843a9c76bf909bc2fb,
         type: 3}
@@ -117,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 394688788083133805, guid: 1838ee7deb0ac1843a9c76bf909bc2fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 394688788083133805, guid: 1838ee7deb0ac1843a9c76bf909bc2fb,
         type: 3}

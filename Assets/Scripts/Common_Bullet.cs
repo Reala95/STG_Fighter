@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,8 @@ public class Common_Bullet : MonoBehaviour
     Common_HP targetHP;
     public int atk;
     public int target; // 0 = Enemy; 1 = Player
-    public Vector2 initialVelocity;
+    public float linearVelocity;
+    public double shootDegree;
     public bool isPiercing = false;
 
     // Bool for check if using other script to control this bullet
@@ -22,7 +24,7 @@ public class Common_Bullet : MonoBehaviour
     void Start()
     {
         bullet = GetComponent<Rigidbody2D>();
-        bullet.velocity = initialVelocity;
+        bullet.velocity = getVelocity();
 
     }
 
@@ -44,11 +46,20 @@ public class Common_Bullet : MonoBehaviour
             if (!targetHP.isInvicible)
             {
                 targetHP.damage(atk);
-                if (!isPiercing)
-                {
-                    Destroy(gameObject);
-                }
             }
+            if (!isPiercing)
+            {
+                Destroy(gameObject);
+            }
+
         }
+    }
+
+    private Vector2 getVelocity()
+    {
+        return new Vector2(
+            linearVelocity * Convert.ToSingle(Math.Cos(Math.PI * shootDegree / 180)),
+            linearVelocity * Convert.ToSingle(Math.Sin(Math.PI * shootDegree / 180))
+            );
     }
 }

@@ -151,9 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13158476b01e454eaf0a9218692b1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solarFighter: {fileID: 176705419875259824}
-  baseBullet: {fileID: 8883713467622307652, guid: 1838ee7deb0ac1843a9c76bf909bc2fb,
+  baseBullets:
+  - {fileID: 4211139672950189500, guid: ee40e6f4568a14f428dc9dde3442639b, type: 3}
+  - {fileID: 7997044552946202645, guid: ad755de066b86a042bad51d421a997a1, type: 3}
+  - {fileID: 7771275750635109737, guid: a1d1bca41974fba4d831c09a98292fdd, type: 3}
+  solarSpecialAbility: {fileID: 8428867904678803293, guid: 7f12cba0e1f86ad49b8cb2d4bddfcb83,
     type: 3}
+  isShieldActived: 0
 --- !u!114 &7023425583206199305
 MonoBehaviour:
   m_ObjectHideFlags: 0

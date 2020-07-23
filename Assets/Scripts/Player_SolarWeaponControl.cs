@@ -5,9 +5,12 @@ using UnityEngine.Video;
 
 public class Player_SolarWeaponControl : MonoBehaviour
 {
-    public GameObject solarFighter;
-    public GameObject baseBullet;
+    public GameObject[] baseBullets = new GameObject[3];
+    public GameObject solarSpecialAbility;
+    public bool isShieldActived = false;
+    int baseBulletLevel = 0;
     int baseBulletCD = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,23 +26,34 @@ public class Player_SolarWeaponControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        baseBulletCD++;
-        if(baseBulletCD == 5)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Fire();
-            baseBulletCD = 0;
+            solarSpecialAbility.transform.position = transform.position;
+            Instantiate(solarSpecialAbility);
         }
+        if (!isShieldActived)
+        {
+            baseBulletCD++;
+            if (baseBulletCD == 5)
+            {
+                Fire();
+                baseBulletCD = 0;
+            }
+        }    
     }
 
     private void Fire()
     {
-        for (int i = 0; i < 3; i++)
+            baseBullets[baseBulletLevel].transform.position = transform.position;
+            Instantiate(baseBullets[baseBulletLevel]);
+    }
+
+    public void WeaponLevelUp()
+    {
+        baseBulletLevel += 1;
+        if(baseBulletLevel > 2)
         {
-            baseBullet.transform.position = new Vector3(
-                solarFighter.transform.position.x + (i - 1) * (0.05f),
-                solarFighter.transform.position.y + 0.4f,
-                solarFighter.transform.position.z);
-            Instantiate(baseBullet);
+            baseBulletLevel = 2;
         }
     }
 }

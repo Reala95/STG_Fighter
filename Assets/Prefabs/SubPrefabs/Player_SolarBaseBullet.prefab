@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2534592569191955637}
   - component: {fileID: 2131295670338726372}
   - component: {fileID: 8917356418249816563}
-  - component: {fileID: -271087178323248856}
+  - component: {fileID: -6136729326035758529}
   m_Layer: 0
   m_Name: Player_SolarBaseBullet
-  m_TagString: Untagged
+  m_TagString: Bullet/Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,9 +129,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.16}
+  m_Size: {x: 0.04, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &-271087178323248856
+--- !u!114 &-6136729326035758529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 2
   target: 0
-  initialVelocity: {x: 0, y: 10}
+  linearVelocity: 20
+  shootDegree: 90
   isPiercing: 0
   isUsingAdditionScripts: 0
