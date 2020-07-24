@@ -1,0 +1,27 @@
+Solar
+weapon cd: 0.2 (5 hit/s)
+lv.1 dmg: 2 x 2 =  4 (dps: 20)
+lv.2 dmg: 2 x 4 =  8 (dps: 40)
+lv.3 dmg: 4 x 3 = 12 (dps: 60)
+
+Vortex
+weapon cd: 0.05 (20 hit/s)
+lv.1 dmg: 1 x 2 = 2 (dps: 40)
+lv.2 dmg: 1 x 4 = 4 (dps: 80)
+lv.3 dmg: 2 x 3 = 6 (dps: 120)
+
+blast cd: 0.25 (4 hit/s)
+blast dmg: 60 (dps: 240)
+
+Nebula
+weapon cd:
+lv.1 dmg:
+lv.2 dmg:
+lv.3 dmg:
+
+
+Stardust
+weapon cd:
+lv.1 dmg:
+lv.2 dmg:
+lv.3 dmg:

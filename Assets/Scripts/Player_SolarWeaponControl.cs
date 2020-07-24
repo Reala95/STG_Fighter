@@ -8,8 +8,9 @@ public class Player_SolarWeaponControl : MonoBehaviour
     public GameObject[] baseBullets = new GameObject[3];
     public GameObject solarSpecialAbility;
     public bool isShieldActived = false;
-    int baseBulletLevel = 0;
-    int baseBulletCD = 0;
+    public int baseBulletLevel = 0;
+    public float weaponCD;
+    float currentWeaponCD = 0;
 
 
     // Start is called before the first frame update
@@ -33,11 +34,11 @@ public class Player_SolarWeaponControl : MonoBehaviour
         }
         if (!isShieldActived)
         {
-            baseBulletCD++;
-            if (baseBulletCD == 5)
+            currentWeaponCD -= Time.fixedDeltaTime;
+            if (currentWeaponCD <= 0)
             {
                 Fire();
-                baseBulletCD = 0;
+                currentWeaponCD = weaponCD;
             }
         }    
     }

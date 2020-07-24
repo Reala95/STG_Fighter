@@ -9,7 +9,8 @@ public class Player_SolarSpecialAvility : MonoBehaviour
     GameObject solarFighter;
     Common_HP solarFighterHP;
     Player_SolarWeaponControl solarFighterWeapon;
-    int healCount = 0;
+    float healCount = 0.5f;
+    float currentHealCount = 0;
 
 
     // Start is called before the first frame update
@@ -30,11 +31,11 @@ public class Player_SolarSpecialAvility : MonoBehaviour
 
     private void FixedUpdate()
     {
-        healCount++;
-        if(healCount == 20) 
+        currentHealCount -= Time.fixedDeltaTime;
+        if(currentHealCount <= 0) 
         {
-            solarFighterHP.heal(1);
-            healCount = 0;
+            solarFighterHP.heal(3);
+            currentHealCount = healCount;
         }
         shieldDuration-= Time.fixedDeltaTime;
         if(shieldDuration <= 0)
