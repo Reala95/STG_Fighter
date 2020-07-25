@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Media;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,19 +21,11 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         public Color Color { set => Renderer.color = value; }
     }
 
-    private class ScrollBarHealthBar : HealthBarSetter
+    private class ImageHealthBar : HealthBarSetter
     {
-        public Scrollbar Scrollbar { get; set; }
-        public float NormalizedHP { set => Scrollbar.size = value; }
-        public Color Color
-        {
-            set
-            {
-                var newColors = Scrollbar.colors;
-                newColors.disabledColor = value;
-                Scrollbar.colors = newColors;
-            }
-        }
+        public Image Image { get; set; }
+        public float NormalizedHP { set => Image.rectTransform.localScale = new Vector3(value, 1, 1); }
+        public Color Color { set => Image.color = value; }
     }
 
     public AnimationCurve redCurve;
@@ -52,15 +45,14 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         }
         else
         {
-            var scrollBar = GetComponent<Scrollbar>();
-            scrollBar.interactable = false; // user cannot edit scrollbar
-            scrollBar.value = 0; // 0 means align to left
-            healthBar = new ScrollBarHealthBar { Scrollbar = scrollBar };
+            var childrenImage = GetComponentsInChildren<Image>()
+                .First(image => image.gameObject != this.gameObject);
+            healthBar = new ImageHealthBar { Image = childrenImage };
         }
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float ratio = (float)playerHP.getCurrentHP() / playerHP.getMaxHP();
         healthBar.NormalizedHP = ratio;
