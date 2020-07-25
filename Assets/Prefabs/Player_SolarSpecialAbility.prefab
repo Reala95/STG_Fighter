@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8428867904678803293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.307612, y: 1.3272743, z: 0}
+  m_LocalPosition: {x: 2.2322645, y: -2.3883767, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 3224099777590127516}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
-  crashDamage: 0
+  crashDamage: 25
   crashalbeTarget: 0
   isInvicible: 1
 --- !u!1001 &1742694281161033645

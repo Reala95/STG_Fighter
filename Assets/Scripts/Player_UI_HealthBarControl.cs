@@ -60,7 +60,7 @@ public class Player_UI_HealthBarControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float ratio = (float)playerHP.getCurrentHP() / playerHP.getMaxHP();
         healthBar.NormalizedHP = ratio;

@@ -173,4 +173,4 @@ MonoBehaviour:
   baseBulletLevel: 0
   weaponCD: 0.05
   blastCD: 0.25
-  blastDuration: 30
+  blastDuration: 15

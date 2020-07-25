@@ -57,7 +57,7 @@ public class Common_HP : MonoBehaviour
     {
         currentHP = Math.Min(maxHP, currentHP + hit);
     }
-    
+
     public int getMaxHP()
     {
         return maxHP;
