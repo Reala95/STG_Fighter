@@ -18,7 +18,7 @@ public class Common_ObjectDelet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(transform.GetChildCount() == 0)
+        if(transform.childCount == 0)
         {
             Destroy(gameObject);
         }
