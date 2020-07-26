@@ -13,9 +13,10 @@ public class Common_Bullet : MonoBehaviour
     public float linearVelocity;
     public double shootDegree;
     public bool isPiercing = false;
+    public bool needToRotate = false;
 
     // Bool for check if using other script to control this bullet
-    public bool isUsingAdditionScripts = false;
+    //public bool isUsingAdditionScripts = false;
 
     // String array for checking target tag
     string[] targetList = { "Enemy", "Player" };
@@ -24,8 +25,11 @@ public class Common_Bullet : MonoBehaviour
     void Start()
     {
         bullet = GetComponent<Rigidbody2D>();
+        if (needToRotate)
+        {
+            bullet.transform.Rotate(new Vector3(0, 0, Convert.ToSingle(shootDegree) - 90.0f));
+        }
         bullet.velocity = getVelocity();
-
     }
 
     // Update is called once per frame
@@ -55,7 +59,7 @@ public class Common_Bullet : MonoBehaviour
         }
     }
 
-    private Vector2 getVelocity()
+    public Vector2 getVelocity()
     {
         return new Vector2(
             linearVelocity * Convert.ToSingle(Math.Cos(Math.PI * shootDegree / 180)),

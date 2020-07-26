@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -27,7 +28,7 @@ public class Player_SolarWeaponControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isShieldActived)
         {
             solarSpecialAbility.transform.position = transform.position;
             Instantiate(solarSpecialAbility);
@@ -51,10 +52,6 @@ public class Player_SolarWeaponControl : MonoBehaviour
 
     public void WeaponLevelUp()
     {
-        baseBulletLevel += 1;
-        if(baseBulletLevel > 2)
-        {
-            baseBulletLevel = 2;
-        }
+        baseBulletLevel += Math.Min(2, baseBulletLevel + 1);
     }
 }

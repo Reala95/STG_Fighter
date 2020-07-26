@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 120
-  crashDamage: 5
+  crashDamage: 10
   crashalbeTarget: 0
   isInvicible: 0
 --- !u!114 &1046242658137810994

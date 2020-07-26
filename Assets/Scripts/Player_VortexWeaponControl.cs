@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,13 +19,13 @@ public class Player_VortexWeaponControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -52,7 +53,7 @@ public class Player_VortexWeaponControl : MonoBehaviour
                 currentBlastCD = blastCD;
             }
             currentBlastDuration -= Time.fixedDeltaTime;
-            if(currentBlastDuration <= 0)
+            if (currentBlastDuration <= 0)
             {
                 isBlastActived = false;
             }
@@ -73,10 +74,6 @@ public class Player_VortexWeaponControl : MonoBehaviour
 
     public void WeaponLevelUp()
     {
-        baseBulletLevel += 1;
-        if (baseBulletLevel > 2)
-        {
-            baseBulletLevel = 2;
-        }
+        baseBulletLevel += Math.Min(2, baseBulletLevel + 1);
     }
 }

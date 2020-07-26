@@ -14,11 +14,12 @@ blast cd: 0.25 (4 hit/s)
 blast dmg: 60 (dps: 240)
 
 Nebula
-weapon cd:
-lv.1 dmg:
-lv.2 dmg:
-lv.3 dmg:
+weapon cd: 0.1 (10 hit/s)
+lv.1 dmg: 3 x 1 (dps: 30)
+lv.2 dmg: 5 x 1 (dps: 50)
+lv.3 dmg: 5 x 1 (dps/heal: 50)
 
+snipe dmg: 5 (dps: 0 ~ 165 (lv.1) / 0 ~ 275 (lv.2+))
 
 Stardust
 weapon cd:

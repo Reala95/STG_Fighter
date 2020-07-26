@@ -6,10 +6,11 @@ public class Player_SolarSpecialAvility : MonoBehaviour
 {
     public int shieldDamage;
     public float shieldDuration;
+    public float healCount;
+    public int healAmount;
     GameObject solarFighter;
     Common_HP solarFighterHP;
     Player_SolarWeaponControl solarFighterWeapon;
-    float healCount = 0.5f;
     float currentHealCount = 0;
 
 
@@ -19,6 +20,7 @@ public class Player_SolarSpecialAvility : MonoBehaviour
         solarFighter = GameObject.FindGameObjectWithTag("Player");
         solarFighterHP = solarFighter.GetComponent<Common_HP>();
         solarFighterWeapon = solarFighter.GetComponent<Player_SolarWeaponControl>();
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), solarFighter.GetComponent<Collider2D>());
         solarFighterHP.isInvicible = true;
         solarFighterWeapon.isShieldActived = true;
     }
@@ -34,7 +36,7 @@ public class Player_SolarSpecialAvility : MonoBehaviour
         currentHealCount -= Time.fixedDeltaTime;
         if(currentHealCount <= 0) 
         {
-            solarFighterHP.heal(3);
+            solarFighterHP.heal(healAmount);
             currentHealCount = healCount;
         }
         shieldDuration-= Time.fixedDeltaTime;
