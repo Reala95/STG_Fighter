@@ -118,10 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretBullet: {fileID: 4066289200413785316, guid: cbdb7416dcbecdd43b96285ff25f1a69,
     type: 3}
-  turretOverloadBullet: {fileID: 1926936366551424341, guid: c962eb10ec9b1b14d9ee4746868db414,
-    type: 3}
   isOverloadActived: 1
-  turretNormalCD: 5
+  turretNormalCD: 2
   turretOverloadCD: 0.2
   overloadDuration: 10
   spinSpeed: 0

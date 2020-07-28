@@ -1,10 +1,10 @@
-Solar
+Solar (hp:120)
 weapon cd: 0.2 (5 hit/s)
 lv.1 dmg: 2 x 2 =  4 (dps: 20)
 lv.2 dmg: 2 x 4 =  8 (dps: 40)
 lv.3 dmg: 4 x 3 = 12 (dps: 60)
 
-Vortex
+Vortex (hp:90)
 weapon cd: 0.05 (20 hit/s)
 lv.1 dmg: 1 x 2 = 2 (dps: 40)
 lv.2 dmg: 1 x 4 = 4 (dps: 80)
@@ -13,16 +13,24 @@ lv.3 dmg: 2 x 3 = 6 (dps: 120)
 blast cd: 0.25 (4 hit/s)
 blast dmg: 60 (dps: 240)
 
-Nebula
+Nebula (hp:30)
 weapon cd: 0.1 (10 hit/s)
-lv.1 dmg: 3 x 1 (dps: 30)
-lv.2 dmg: 5 x 1 (dps: 50)
-lv.3 dmg: 5 x 1 (dps/heal: 50)
+lv.1 dmg: 1 x 3 = 3 (dps: 30)
+lv.2 dmg: 1 x 5 = 5 (dps: 50)
+lv.3 dmg: 1 x 5 = 5 (dps/heal: 50)
 
-snipe dmg: 5 (dps: 0 ~ 165 (lv.1) / 0 ~ 275 (lv.2+))
+snipe lv.1 dmg: (1 + 20) x 3 = 63 (dps: 630)
+snipe lv.2 dmg: (1 + 20) x 5 = 105 (dps: 1050)
+snipe lv.3 dmg: (1 + 20) x 5 = 105 (dps: 1050)
 
-Stardust
-weapon cd:
-lv.1 dmg:
-lv.2 dmg:
-lv.3 dmg:
+Stardust (hp:60)
+weapon cd: 0.2 (5 hit/s)
+lv.1 dmg: 3 x 1 (dps: 15)
+lv.2 dmg: 3 x 2 (dps: 30)
+lv.3 dmg: 3 x 3 (dps: 45)
+
+turret cd: 2 (0.5 hit/s)
+turret dmg: 15 x 2 (dps: 15)
+
+overload cd: 0.2 (5 hit/s)
+overload dmg: 15 x 10 (dps: 750)

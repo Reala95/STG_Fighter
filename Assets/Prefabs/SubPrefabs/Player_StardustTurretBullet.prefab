@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4066289200413785316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92540526, y: -2.494055, z: 0}
+  m_LocalPosition: {x: -0.97697246, y: 4.099999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -146,6 +146,6 @@ MonoBehaviour:
   atk: 15
   target: 0
   linearVelocity: 15
-  shootDegree: 17.71530818939209
+  shootDegree: 100
   isPiercing: 0
   needToRotate: 1

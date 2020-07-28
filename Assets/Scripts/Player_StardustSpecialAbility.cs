@@ -66,8 +66,15 @@ public class Player_StardustSpecialAbility : MonoBehaviour
 
     private float getTargetAngle(GameObject target)
     {
-        Vector3 headToTarget = target.transform.position - transform.position;
-        return Mathf.Atan2(headToTarget.y, headToTarget.x) * Mathf.Rad2Deg;
+        if (target != null)
+        {
+            Vector3 headToTarget = target.transform.position - transform.position;
+            return Mathf.Atan2(headToTarget.y, headToTarget.x) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            return 90;
+        }
     }
 
     private void Fire()
