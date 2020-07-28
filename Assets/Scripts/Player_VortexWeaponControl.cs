@@ -25,16 +25,16 @@ public class Player_VortexWeaponControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.Space) && !isBlastActived)
         {
             isBlastActived = true;
             currentBlastDuration = blastDuration;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
         if (!isBlastActived)
         {
             currentWeaponCD -= Time.fixedDeltaTime;

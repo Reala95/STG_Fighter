@@ -47,9 +47,7 @@ public class Player_NebulaSpecialAbility : MonoBehaviour
 
     private float getSnipeAngle()
     {
-        float x = transform.position.x - snipeBullet.transform.position.x;
-        float y = transform.position.y - snipeBullet.transform.position.y;
-        float hypotenuse = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
-        return Mathf.Acos(x / hypotenuse) * 180 / Mathf.PI;
+        Vector3 headToTarget = transform.position - snipeBullet.transform.position;
+        return Mathf.Atan2(headToTarget.y, headToTarget.x) * Mathf.Rad2Deg;
     }
 }

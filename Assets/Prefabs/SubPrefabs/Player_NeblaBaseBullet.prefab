@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atk: 1
   target: 0
-  linearVelocity: 10
+  linearVelocity: 12
   shootDegree: 90
   isPiercing: 0
   needToRotate: 1

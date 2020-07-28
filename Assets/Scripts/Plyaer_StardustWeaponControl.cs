@@ -3,15 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_NebulaWeaponControl : MonoBehaviour
+public class Plyaer_StardustWeaponControl : MonoBehaviour
 {
     public GameObject[] baseBullets = new GameObject[3];
-    public bool isSnipeActived = false;
     public int baseBulletLevel = 0;
     public float weaponCD;
     float currentWeaponCD = 0;
-    public float snipeDuration;
-    float currentSnipeDuration;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +19,7 @@ public class Player_NebulaWeaponControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isSnipeActived)
-        {
-            isSnipeActived = true;
-            currentSnipeDuration = snipeDuration;
-        }
+        
     }
 
     private void FixedUpdate()
@@ -37,15 +30,6 @@ public class Player_NebulaWeaponControl : MonoBehaviour
             Fire();
             currentWeaponCD = weaponCD;
         }
-        if (isSnipeActived)
-        {
-            currentSnipeDuration -= Time.fixedDeltaTime;
-            if(currentSnipeDuration <= 0)
-            {
-                isSnipeActived = false;
-            }
-        }
-
     }
 
     private void Fire()
@@ -59,4 +43,3 @@ public class Player_NebulaWeaponControl : MonoBehaviour
         baseBulletLevel += Math.Min(2, baseBulletLevel + 1);
     }
 }
-

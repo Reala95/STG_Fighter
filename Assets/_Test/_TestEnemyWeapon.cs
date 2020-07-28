@@ -7,6 +7,7 @@ public class _TestEnemyWeapon : MonoBehaviour
     public GameObject enemy;
     public GameObject bullet;
     double[] degrees = { 30, 150, 270 };
+    public bool isFireAllowed;
     Common_Bullet bulletData;
     int count = 0;
     
@@ -25,7 +26,7 @@ public class _TestEnemyWeapon : MonoBehaviour
     private void FixedUpdate()
     {
         count++;
-        if(count == 6)
+        if(count == 6 && isFireAllowed)
         {
             Fire();
             count = 0;

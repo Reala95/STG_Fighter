@@ -23,16 +23,15 @@ public class Player_SolarWeaponControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.Space) && !isShieldActived)
         {
             solarSpecialAbility.transform.position = transform.position;
             Instantiate(solarSpecialAbility);
         }
+    }
+
+    private void FixedUpdate()
+    {
         if (!isShieldActived)
         {
             currentWeaponCD -= Time.fixedDeltaTime;

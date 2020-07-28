@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d5c9153a459d348bf2af27ace83660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 40
+  HP: 50
   crashDamage: 5
   crashalbeTarget: 0
   isInvicible: 0

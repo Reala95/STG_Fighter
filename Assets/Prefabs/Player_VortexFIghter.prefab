@@ -170,7 +170,7 @@ MonoBehaviour:
   vortexSpecialAbility: {fileID: 2584361100850215764, guid: 9e5082fd319e8df45a8633ca2fe05b60,
     type: 3}
   isBlastActived: 0
-  baseBulletLevel: 0
+  baseBulletLevel: 1
   weaponCD: 0.05
   blastCD: 0.25
   blastDuration: 15

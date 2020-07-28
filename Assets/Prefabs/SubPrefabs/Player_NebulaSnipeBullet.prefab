@@ -146,6 +146,6 @@ MonoBehaviour:
   atk: 5
   target: 0
   linearVelocity: 15
-  shootDegree: 40.596248626708984
+  shootDegree: 90
   isPiercing: 0
   needToRotate: 1
