@@ -12,6 +12,8 @@ public class Player_NebulaSpecialAbility : MonoBehaviour
     int weaponLevel;
     bool isSnipeActived;
 
+    SE_PlayerSoundManager playerSoundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,8 @@ public class Player_NebulaSpecialAbility : MonoBehaviour
         snipeBulletData = snipeBullet.GetComponent<Common_Bullet>();
         weaponLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_NebulaWeaponControl>().baseBulletLevel;
         isSnipeActived = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_NebulaWeaponControl>().isSnipeActived;
+
+        playerSoundManager = GameObject.FindGameObjectWithTag("PlayerSound").GetComponent<SE_PlayerSoundManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class Player_NebulaSpecialAbility : MonoBehaviour
                 snipeBullet.transform.position = new Vector3(UnityEngine.Random.Range(-7.5f, 7.5f), -4.5f, 0);
                 snipeBulletData.shootDegree = getSnipeAngle();
                 Instantiate(snipeBullet);
+                playerSoundManager.playerSound(playerSoundManager.nebulaSnipe);
             }
             
         }

@@ -172,3 +172,4 @@ MonoBehaviour:
   isShieldActived: 0
   baseBulletLevel: 0
   weaponCD: 0.2
+  fireSound: {fileID: 8300000, guid: aafcf671886ec1f41942f94d0daad612, type: 3}

@@ -16,10 +16,12 @@ public class Player_VortexWeaponControl : MonoBehaviour
     public float blastDuration;
     float currentBlastDuration = 0;
 
+    SE_PlayerSoundManager playerSoundManager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        playerSoundManager = GameObject.FindGameObjectWithTag("PlayerSound").GetComponent<SE_PlayerSoundManager>();
     }
 
     // Update is called once per frame
@@ -64,12 +66,14 @@ public class Player_VortexWeaponControl : MonoBehaviour
     {
         baseBullets[baseBulletLevel].transform.position = transform.position;
         Instantiate(baseBullets[baseBulletLevel]);
+        playerSoundManager.playerSound(playerSoundManager.vortexFire);
     }
 
     private void Blast()
     {
         vortexSpecialAbility.transform.position = transform.position;
         Instantiate(vortexSpecialAbility);
+        playerSoundManager.playerSound(playerSoundManager.vortexBlast);
     }
 
     public void WeaponLevelUp()

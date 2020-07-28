@@ -13,11 +13,12 @@ public class Player_SolarWeaponControl : MonoBehaviour
     public float weaponCD;
     float currentWeaponCD = 0;
 
+    SE_PlayerSoundManager playerSoundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerSoundManager = GameObject.FindGameObjectWithTag("PlayerSound").GetComponent<SE_PlayerSoundManager>();
     }
 
     // Update is called once per frame
@@ -45,8 +46,9 @@ public class Player_SolarWeaponControl : MonoBehaviour
 
     private void Fire()
     {
-            baseBullets[baseBulletLevel].transform.position = transform.position;
-            Instantiate(baseBullets[baseBulletLevel]);
+        baseBullets[baseBulletLevel].transform.position = transform.position;
+        Instantiate(baseBullets[baseBulletLevel]);
+        playerSoundManager.playerSound(playerSoundManager.solarFire);
     }
 
     public void WeaponLevelUp()

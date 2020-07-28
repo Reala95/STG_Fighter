@@ -18,10 +18,14 @@ public class Player_StardustSpecialAbility : MonoBehaviour
     float currentTurretOverloadCD = 0;
     float currentOverloadDuration = 0;
 
+    SE_PlayerSoundManager playerSoundManager;
+
     // Start is called before the first frame update
     void Start()
     {
         turretBulletData = turretBullet.GetComponent<Common_Bullet>();
+
+        playerSoundManager = GameObject.FindGameObjectWithTag("PlayerSound").GetComponent<SE_PlayerSoundManager>();
     }
 
     // Update is called once per frame
@@ -82,6 +86,7 @@ public class Player_StardustSpecialAbility : MonoBehaviour
         turretBulletData.shootDegree = getTargetAngle(target);
         turretBullet.transform.position = transform.position;
         Instantiate(turretBullet);
+        playerSoundManager.playerSound(playerSoundManager.stardustTurret);
     }
 
     private void OverloadFire()
@@ -92,5 +97,6 @@ public class Player_StardustSpecialAbility : MonoBehaviour
             turretBullet.transform.position = transform.position;
             Instantiate(turretBullet);
         }
+        playerSoundManager.playerSound(playerSoundManager.stardustTurret);
     }
 }

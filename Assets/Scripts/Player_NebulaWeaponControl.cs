@@ -13,10 +13,12 @@ public class Player_NebulaWeaponControl : MonoBehaviour
     public float snipeDuration;
     float currentSnipeDuration;
 
+    SE_PlayerSoundManager playerSoundManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerSoundManager = GameObject.FindGameObjectWithTag("PlayerSound").GetComponent<SE_PlayerSoundManager>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class Player_NebulaWeaponControl : MonoBehaviour
     {
         baseBullets[baseBulletLevel].transform.position = transform.position;
         Instantiate(baseBullets[baseBulletLevel]);
+        playerSoundManager.playerSound(playerSoundManager.nebulaFire);
     }
 
     public void WeaponLevelUp()
