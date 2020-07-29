@@ -11,21 +11,21 @@ public class Player_UI_HealthBarControl : MonoBehaviour
     private interface HealthBarSetter
     {
         float NormalizedHP { set; }
-        Color Color { set; }
+        Color color { set; }
     }
 
     private class SpriteHealthBar : HealthBarSetter
     {
-        public SpriteRenderer Renderer { get; set; }
-        public float NormalizedHP { set => Renderer.transform.localScale = new Vector3(value, 1, 1); }
-        public Color Color { set => Renderer.color = value; }
+        public SpriteRenderer renderer { get; set; }
+        public float NormalizedHP { set => renderer.transform.localScale = new Vector3(value, 1, 1); }
+        public Color color { set => renderer.color = value; }
     }
 
     private class ImageHealthBar : HealthBarSetter
     {
-        public Image Image { get; set; }
-        public float NormalizedHP { set => Image.rectTransform.localScale = new Vector3(value, 1, 1); }
-        public Color Color { set => Image.color = value; }
+        public Image img { get; set; }
+        public float NormalizedHP { set => img.rectTransform.localScale = new Vector3(value, 1, 1); }
+        public Color color { set => img.color = value; }
     }
 
     public AnimationCurve redCurve;
@@ -41,13 +41,11 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         var sprite = GetComponent<SpriteRenderer>();
         if(sprite != null)
         {
-            healthBar = new SpriteHealthBar { Renderer = sprite };
+            healthBar = new SpriteHealthBar { renderer = sprite };
         }
         else
         {
-            var childrenImage = GetComponentsInChildren<Image>()
-                .First(image => image.gameObject != this.gameObject);
-            healthBar = new ImageHealthBar { Image = childrenImage };
+            healthBar = new ImageHealthBar { img = GetComponent<Image>() };
         }
     }
 
@@ -60,7 +58,7 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         float r = redCurve.Evaluate(ratio);
         float g = greenCurve.Evaluate(ratio);
         float b = blueCurve.Evaluate(ratio);
-        healthBar.Color = new Color(r, g, b);
+        healthBar.color = new Color(r, g, b);
     }
 }
 
