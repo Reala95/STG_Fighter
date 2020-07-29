@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8007305522547734554}
   - component: {fileID: 5047075684899331573}
-  - component: {fileID: 3250543933428869537}
+  - component: {fileID: 2298015111567853339}
   m_Layer: 0
   m_Name: Player_SolarShield_1
   m_TagString: Shield
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3250543933428869537
+--- !u!114 &2298015111567853339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2310433790836212576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd57ac078991fb47a2edcf80035aff1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b20331648681d34fb0f039c0cbb7db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotating: {x: 0, y: 0, z: -0.05}
+  rotating: {x: 0, y: 0, z: 0.05}

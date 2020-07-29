@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6926231194615316454}
   - component: {fileID: 4023025863184003070}
-  - component: {fileID: 4474205516225995613}
+  - component: {fileID: -1761570797565664439}
   m_Layer: 0
   m_Name: Player_StardustTurretSet
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4474205516225995613
+--- !u!114 &-1761570797565664439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,9 +64,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6424848789177962912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465fa8b8ea3b614428cf0299c79c91ef, type: 3}
+  m_Script: {fileID: 11500000, guid: c89cf98c2abfee742a2e9425834c36de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 15
 --- !u!1001 &67423105671902004
 PrefabInstance:
   m_ObjectHideFlags: 0

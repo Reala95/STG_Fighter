@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6261399519961513746}
   - component: {fileID: 1150275906659199548}
   - component: {fileID: -7208231752195656830}
-  - component: {fileID: 3453895239872185827}
+  - component: {fileID: 7727744036378086539}
   m_Layer: 0
   m_Name: Player_SolarSpecialAbility
   m_TagString: Shield
@@ -85,7 +85,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &3453895239872185827
+--- !u!114 &7727744036378086539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,13 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8428867904678803293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3f42cb48429ec4ca1e68caa4533584, type: 3}
+  m_Script: {fileID: 11500000, guid: 832270f4f3fc5644bb2ed93689d5ad0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldDamage: 25
-  shieldDuration: 5
-  healCount: 0.1
-  healAmount: 1
+  returnBullet: {fileID: 7275878017319031767, guid: f2f83d59a6573fa4bac1eec2226f1b69,
+    type: 3}
+  shieldDamage: 5
+  shieldHealAmount: 1
+  shieldHealCD: 0.1
 --- !u!1001 &1742694281161033645
 PrefabInstance:
   m_ObjectHideFlags: 0

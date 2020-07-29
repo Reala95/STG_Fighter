@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player_MovemovementControl : MonoBehaviour
 {
+    public float sensitivity = 18.0f;
     Rigidbody2D player;
-    float sensitivity = 18.0f;
+    bool allowMoving = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +17,22 @@ public class Player_MovemovementControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            allowMoving = !allowMoving;
+            player.velocity = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
     {
-        Vector2 mouse = new Vector2(
+        if (allowMoving)
+        {
+            Vector2 mouse = new Vector2(
             Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, -7.1f, 7.1f),
             Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).y, -4.1f, 4.1f)
             );
-        player.velocity = sensitivity * (mouse - (Vector2)transform.position);
+            player.velocity = sensitivity * (mouse - (Vector2)transform.position);
+        }
     }
 }

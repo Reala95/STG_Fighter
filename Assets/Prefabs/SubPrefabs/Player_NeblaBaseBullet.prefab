@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1984732240389277552}
   - component: {fileID: 5596698113058927945}
   - component: {fileID: 4416796778834271514}
-  - component: {fileID: 6556231901271507651}
+  - component: {fileID: 4465239241594957353}
   m_Layer: 0
   m_Name: Player_NeblaBaseBullet
   m_TagString: Bullet/Player
@@ -148,9 +148,11 @@ MonoBehaviour:
   target: 0
   linearVelocity: 12
   shootDegree: 90
+  presetVelocity: {x: 0, y: 0}
   isPiercing: 0
   needToRotate: 1
---- !u!114 &6556231901271507651
+  hasPresetVelocity: 0
+--- !u!114 &4465239241594957353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +161,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3468663090681491324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70cf6eb32dda725428d77cbcdd80359b, type: 3}
+  m_Script: {fileID: 11500000, guid: cc50f46e53697ca46a341ad71010f782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
-  snipeBullet: {fileID: 1032986545174563332, guid: 3b1a9547acdb4514a9f29e0869ccc80a,
+  nebulaSnipeBullet: {fileID: 1032986545174563332, guid: 3b1a9547acdb4514a9f29e0869ccc80a,
     type: 3}
+  nebulaHealAmount: 1

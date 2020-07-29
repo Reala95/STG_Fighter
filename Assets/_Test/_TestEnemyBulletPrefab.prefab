@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 529656826086864261}
   - component: {fileID: 6655921337187942206}
   - component: {fileID: 5067683784357505631}
-  - component: {fileID: 8105647442448528409}
+  - component: {fileID: -605232785593219136}
   - component: {fileID: 2863369953988533623}
   m_Layer: 0
   m_Name: _TestEnemyBulletPrefab
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589402032386365500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,8 +105,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &8105647442448528409
-CircleCollider2D:
+--- !u!61 &-605232785593219136
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,8 +119,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!114 &2863369953988533623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +146,8 @@ MonoBehaviour:
   atk: 5
   target: 1
   linearVelocity: 5
-  shootDegree: 965
+  shootDegree: 2160
+  presetVelocity: {x: 0, y: 0}
   isPiercing: 0
   needToRotate: 0
+  hasPresetVelocity: 0

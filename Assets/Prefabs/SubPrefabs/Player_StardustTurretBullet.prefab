@@ -146,6 +146,8 @@ MonoBehaviour:
   atk: 15
   target: 0
   linearVelocity: 15
-  shootDegree: 100
+  shootDegree: 0
+  presetVelocity: {x: 0, y: 0}
   isPiercing: 0
   needToRotate: 1
+  hasPresetVelocity: 0

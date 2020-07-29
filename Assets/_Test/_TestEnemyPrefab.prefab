@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506644272715357724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -138,6 +138,7 @@ MonoBehaviour:
   crashDamage: 25
   crashalbeTarget: 1
   isInvicible: 0
+  currentHP: 0
 --- !u!114 &2386038507941225874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,4 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 506644272715357724}
   bullet: {fileID: 589402032386365500, guid: f167c8862bc6b3245bba9eb633a26ec7, type: 3}
-  isFireAllowed: 0
+  isFireAllowed: 1
