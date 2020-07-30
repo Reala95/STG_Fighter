@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player_SP_TurretTargetSearch : MonoBehaviour
 {
+    public float aimAccuracy;
+    
     Player_SP_TurretWeaponControl turretWeapon;
     GameObject target;
 
@@ -17,21 +19,23 @@ public class Player_SP_TurretTargetSearch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = GameObject.FindGameObjectsWithTag("Enemy").OrderBy(t => (t.transform.position - transform.position).sqrMagnitude).First();
-        Quaternion q = Quaternion.AngleAxis(getTargetAngle(target) - 90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, 0.05f);
+        GameObject[] targetList = GameObject.FindGameObjectsWithTag("Enemy");
+        if(targetList.Length != 0)
+        {
+            target = GameObject.FindGameObjectsWithTag("Enemy").OrderBy(t => (t.transform.position - transform.position).sqrMagnitude).First();
+            Quaternion q = Quaternion.AngleAxis(getTargetAngle(target) - 90, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
+        } 
+        else
+        {
+            Quaternion q = Quaternion.AngleAxis(0, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
+        }   
     }
 
     private float getTargetAngle(GameObject target)
     {
-        if (target != null)
-        {
-            Vector3 headToTarget = target.transform.position - transform.position;
-            return Mathf.Atan2(headToTarget.y, headToTarget.x) * Mathf.Rad2Deg;
-        }
-        else
-        {
-            return 90;
-        }
+        Vector3 headToTarget = target.transform.position - transform.position;
+        return Mathf.Atan2(headToTarget.y, headToTarget.x) * Mathf.Rad2Deg;
     }
 }

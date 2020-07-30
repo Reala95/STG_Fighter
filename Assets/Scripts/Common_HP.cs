@@ -51,8 +51,6 @@ public class Common_HP : MonoBehaviour
     public void damage(int hit)
     {
         currentHP = Math.Max(0, currentHP - hit);
-        Debug.Log("Geting hit: " + hit);
-        Debug.Log("Remain HP: " + currentHP);
     }
 
     public void heal(int hit)
