@@ -31,29 +31,14 @@ public class Player_UI_HealthBarControl : MonoBehaviour
     public AnimationCurve redCurve;
     public AnimationCurve greenCurve;
     public AnimationCurve blueCurve;
+    GameObject player = null;
     Common_HP playerHP;
     HealthBarSetter healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<Common_HP>();
-            var sprite = GetComponent<SpriteRenderer>();
-            if (sprite != null)
-            {
-                healthBar = new SpriteHealthBar { renderer = sprite };
-            }
-            else
-            {
-                healthBar = new ImageHealthBar { img = GetComponent<Image>() };
-            }
-        }
+        
     }
 
     // Update is called once per frame
@@ -66,6 +51,22 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         float g = greenCurve.Evaluate(ratio);
         float b = blueCurve.Evaluate(ratio);
         healthBar.color = new Color(r, g, b);
+    }
+
+    public void setPlayer(GameObject player)
+    {
+        this.player = player;
+        playerHP = player.GetComponent<Common_HP>();
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            healthBar = new SpriteHealthBar { renderer = sprite };
+        }
+        else
+        {
+            healthBar = new ImageHealthBar { img = GetComponent<Image>() };
+        }
+
     }
 }
 

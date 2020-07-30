@@ -22,7 +22,7 @@ public class Player_SP_TurretTargetSearch : MonoBehaviour
         GameObject[] targetList = GameObject.FindGameObjectsWithTag("Enemy");
         if(targetList.Length != 0)
         {
-            target = GameObject.FindGameObjectsWithTag("Enemy").OrderBy(t => (t.transform.position - transform.position).sqrMagnitude).First();
+            target = targetList.OrderBy(t => (t.transform.position - transform.position).sqrMagnitude).First();
             Quaternion q = Quaternion.AngleAxis(getTargetAngle(target) - 90, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
         } 

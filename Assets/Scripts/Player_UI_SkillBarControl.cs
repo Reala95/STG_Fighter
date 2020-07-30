@@ -27,31 +27,17 @@ public class Player_UI_SkillBarControl : MonoBehaviour
         public Color color { set => img.color = value; }
     }
 
+    GameObject player;
     Player_SpecialAbilityActivation playerSkill;
     SkillBarSetter skillBar;
+
     Color inCD = new Color(0, 90 / 255, 1);
     Color inActived = new Color(1, 200 / 255, 0);
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            playerSkill = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_SpecialAbilityActivation>();
-            var sprite = GetComponent<SpriteRenderer>();
-            if (sprite != null)
-            {
-                skillBar = new SpriteSkillBar { renderer = sprite };
-            }
-            else
-            {
-                skillBar = new ImageSkillBar { img = GetComponent<Image>() };
-            }
-        }
+
     }
 
     // Update is called once per frame
@@ -70,5 +56,20 @@ public class Player_UI_SkillBarControl : MonoBehaviour
             skillBar.color = inActived;
         }
         
+    }
+
+    public void setPlayer(GameObject player)
+    {
+        this.player = player;
+        playerSkill = player.GetComponent<Player_SpecialAbilityActivation>();
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            skillBar = new SpriteSkillBar { renderer = sprite };
+        }
+        else
+        {
+            skillBar = new ImageSkillBar { img = GetComponent<Image>() };
+        }
     }
 }

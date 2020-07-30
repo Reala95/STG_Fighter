@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
@@ -21,7 +22,7 @@ public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
     public float fireInterval; // Fire interval within a fire phase (If clip is 0, then set this to 0)
     float curFireInterval = 0;
 
-    GameObject targetPlayer;
+    GameObject[] targetPlayer;
     bool isReloading = false;
     bool isFiring = false;
 
@@ -35,9 +36,17 @@ public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetPlayer = GameObject.FindGameObjectWithTag("Player");
-        Quaternion q = Quaternion.AngleAxis(getTargetAngle(targetPlayer) + 90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
+        targetPlayer = GameObject.FindGameObjectsWithTag("Player");
+        if(targetPlayer.Length != 0)
+        {
+            Quaternion q = Quaternion.AngleAxis(getTargetAngle(targetPlayer.First()) + 90, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
+        }
+        else
+        {
+            Quaternion q = Quaternion.AngleAxis(0, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);
+        }
     }
 
     private void FixedUpdate()
