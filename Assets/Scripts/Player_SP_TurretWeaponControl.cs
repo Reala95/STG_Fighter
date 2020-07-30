@@ -15,11 +15,15 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     Player_BaseWeaponControl stardustFighterWeapon;
     Player_SpecialAbilityActivation spData;
 
+    AudioSource fireSound;
+
     // Start is called before the first frame update
     void Start()
     {
         stardustFighterWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_BaseWeaponControl>();
         spData = GetComponent<Player_SpecialAbilityActivation>();
+
+        fireSound = GameObject.Find("StardustTurretWeapon").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,6 +64,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     private void Fire()
     {
         turretBullets[turretBulletLevel].GetComponent<Player_SP_TurretFireDirection>().angle = transform.eulerAngles;
+        fireSound.Play();
         Instantiate(turretBullets[turretBulletLevel], transform.position, Quaternion.identity);
     }
 }

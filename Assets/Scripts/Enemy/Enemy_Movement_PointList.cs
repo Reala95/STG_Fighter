@@ -27,10 +27,12 @@ public class Enemy_Movement_PointList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        checkArraysConflict();
         enemy = GetComponent<Rigidbody2D>();
         Quaternion q = Quaternion.AngleAxis(initAngle + 90, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
         onMove = true;
+        
     }
 
     // Update is called once per frame
@@ -43,7 +45,6 @@ public class Enemy_Movement_PointList : MonoBehaviour
     {
         if(onMove && enemy.velocity == Vector2.zero)
         {
-            Debug.Log("OnMoving but stopped");
             if (rotateToNextBeforeMove || waitTimeList[curDestination] == 0)
             {
                 Quaternion q = Quaternion.AngleAxis(moveAngleList[curDestination] + 90, Vector3.forward);
@@ -54,7 +55,6 @@ public class Enemy_Movement_PointList : MonoBehaviour
         }
         else if (onMove)
         {
-            Debug.Log("OnMoving");
             curMoveTime -= Time.fixedDeltaTime;
             if(curMoveTime <= 0)
             {
@@ -66,7 +66,6 @@ public class Enemy_Movement_PointList : MonoBehaviour
         }
         else if (onWait)
         {
-            Debug.Log("OnWaiting");
             curWaitTime -= Time.fixedDeltaTime;
             if (rotateToNextWhileWaiting && waitTimeList[curDestination] != 0)
             {
@@ -74,13 +73,13 @@ public class Enemy_Movement_PointList : MonoBehaviour
             } 
             if (curWaitTime <= 0)
             {
-                onMove = true;
-                onWait = false;
                 curDestination++;
                 if(curDestination == moveAngleList.Length)
                 {
                     Destroy(gameObject);
                 }
+                onMove = true;
+                onWait = false;                               
             }
         }
         //Debug.Log(enemy.velocity.x + ", " + enemy.velocity.y);
@@ -96,10 +95,12 @@ public class Enemy_Movement_PointList : MonoBehaviour
 
     void rotateToNext()
     {
-        transform.Rotate(new Vector3(
-            0, 
-            0, 
-            (moveAngleList[curDestination + 1] - getCurAngle()) * Time.fixedDeltaTime / waitTimeList[curDestination])
+        Quaternion from = Quaternion.AngleAxis(getCurAngle() + 90, Vector3.forward);
+        Quaternion to = Quaternion.AngleAxis(moveAngleList[curDestination + 1] + 90, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(
+            from, 
+            to,
+            1 - Mathf.Max(0, curWaitTime) / waitTimeList[curDestination] 
             );
     }
 
@@ -113,5 +114,20 @@ public class Enemy_Movement_PointList : MonoBehaviour
         {
             return moveAngleList[curDestination];
         }
+    }
+
+    void checkArraysConflict()
+    {
+        if (moveAngleList.Length != waitTimeList.Length || waitTimeList.Length != moveTimeList.Length)
+        {
+            Debug.LogError(gameObject.name + ": MovePointList Conflicted, the object has been deleted");
+            Destroy(gameObject);
+        }
+        else if (moveAngleList.Length == 0)
+        {
+            Debug.LogError(gameObject.name + ": MovePointList Conflicted, the object has been deleted");
+            Destroy(gameObject);
+        }
+        
     }
 }

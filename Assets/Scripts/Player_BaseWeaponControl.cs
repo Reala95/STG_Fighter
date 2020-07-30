@@ -10,10 +10,13 @@ public class Player_BaseWeaponControl : MonoBehaviour
     float curWeaponCD = 0;
     public bool isFireAllowed = true;
 
+    public string audioSourceName;
+    AudioSource fireSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        fireSound = GameObject.Find(audioSourceName).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class Player_BaseWeaponControl : MonoBehaviour
 
     private void Fire()
     {
+        fireSound.Play();
         Instantiate(baseBullets[baseBulletLevel], transform.position, Quaternion.identity);
     }
 

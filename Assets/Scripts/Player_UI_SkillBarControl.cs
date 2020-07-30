@@ -35,15 +35,22 @@ public class Player_UI_SkillBarControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerSkill = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_SpecialAbilityActivation>();
-        var sprite = GetComponent<SpriteRenderer>();
-        if(sprite != null)
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
-            skillBar = new SpriteSkillBar { renderer = sprite };
+            Destroy(gameObject);
         }
         else
         {
-            skillBar = new ImageSkillBar { img = GetComponent<Image>() };
+            playerSkill = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_SpecialAbilityActivation>();
+            var sprite = GetComponent<SpriteRenderer>();
+            if (sprite != null)
+            {
+                skillBar = new SpriteSkillBar { renderer = sprite };
+            }
+            else
+            {
+                skillBar = new ImageSkillBar { img = GetComponent<Image>() };
+            }
         }
     }
 

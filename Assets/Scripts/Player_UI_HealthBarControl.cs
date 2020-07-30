@@ -37,15 +37,22 @@ public class Player_UI_HealthBarControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<Common_HP>();
-        var sprite = GetComponent<SpriteRenderer>();
-        if(sprite != null)
+        if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
-            healthBar = new SpriteHealthBar { renderer = sprite };
+            Destroy(gameObject);
         }
         else
         {
-            healthBar = new ImageHealthBar { img = GetComponent<Image>() };
+            playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<Common_HP>();
+            var sprite = GetComponent<SpriteRenderer>();
+            if (sprite != null)
+            {
+                healthBar = new SpriteHealthBar { renderer = sprite };
+            }
+            else
+            {
+                healthBar = new ImageHealthBar { img = GetComponent<Image>() };
+            }
         }
     }
 

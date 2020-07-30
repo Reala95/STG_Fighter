@@ -140,7 +140,6 @@ MonoBehaviour:
   crashDamage: 5
   crashalbeTarget: 0
   isInvicible: 0
-  currentHP: 0
 --- !u!114 &6055983256958293500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba52ffdb53ecaa41b8211b1b0aae6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 18
 --- !u!114 &4193950687655079518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +171,7 @@ MonoBehaviour:
   - {fileID: 9019915682860702723, guid: 9601d30e933e65a439e34dc8a2ad22cd, type: 3}
   baseBulletLevel: 0
   weaponCD: 0.1
+  audioSourceName: NebulaFighterWeapon
   isFireAllowed: 1
 --- !u!114 &1077876052565930946
 MonoBehaviour:

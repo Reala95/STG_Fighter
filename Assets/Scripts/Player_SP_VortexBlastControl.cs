@@ -11,11 +11,14 @@ public class Player_SP_VortexBlastControl : MonoBehaviour
     Player_SpecialAbilityActivation spData;
     bool isBlastAllowed;
 
+    AudioSource fireSound;
+
     // Start is called before the first frame update
     void Start()
     {
         weaponData = GetComponent<Player_BaseWeaponControl>();
         spData = GetComponent<Player_SpecialAbilityActivation>();
+        fireSound = GameObject.Find("VortexFighterWeapon").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class Player_SP_VortexBlastControl : MonoBehaviour
 
     private void Blast()
     {
+        fireSound.Play();
         Instantiate(vortexBlastBullet, transform.position, Quaternion.identity);
     }
 }

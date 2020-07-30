@@ -24,6 +24,14 @@ public class Player_SP_StardustTurretFllowing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        stardustTurretSet.velocity = sensitivity * (Vector2)(stardustFighter.transform.position - transform.position);
+        if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            stardustTurretSet.velocity = sensitivity * (Vector2)(stardustFighter.transform.position - transform.position);
+        }
+        
     }
 }

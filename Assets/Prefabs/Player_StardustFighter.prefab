@@ -172,6 +172,7 @@ MonoBehaviour:
   baseBulletLevel: 0
   weaponCD: 0.2
   isFireAllowed: 1
+  audioSourceName: StardustFighterWeapon
 --- !u!114 &400639324267492907
 MonoBehaviour:
   m_ObjectHideFlags: 0

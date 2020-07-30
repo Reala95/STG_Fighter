@@ -141,7 +141,6 @@ MonoBehaviour:
   crashDamage: 10
   crashalbeTarget: 0
   isInvicible: 0
-  currentHP: 0
 --- !u!114 &1046242658137810994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba52ffdb53ecaa41b8211b1b0aae6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 18
 --- !u!114 &-1170853422740343420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   - {fileID: 5070232736151226195, guid: c3ff8b972666dd84caeb4bc7b4d1750f, type: 3}
   baseBulletLevel: 0
   weaponCD: 0.05
+  audioSourceName: VortexFighterWeapon
   isFireAllowed: 1
 --- !u!114 &1907293984386270556
 MonoBehaviour:
