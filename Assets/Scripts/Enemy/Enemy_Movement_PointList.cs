@@ -44,7 +44,7 @@ public class Enemy_Movement_PointList : MonoBehaviour
         if(onMove && enemy.velocity == Vector2.zero)
         {
             Debug.Log("OnMoving but stopped");
-            if (rotateToNextBeforeMove)
+            if (rotateToNextBeforeMove || waitTimeList[curDestination] == 0)
             {
                 Quaternion q = Quaternion.AngleAxis(moveAngleList[curDestination] + 90, Vector3.forward);
                 transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
@@ -68,7 +68,7 @@ public class Enemy_Movement_PointList : MonoBehaviour
         {
             Debug.Log("OnWaiting");
             curWaitTime -= Time.fixedDeltaTime;
-            if (rotateToNextWhileWaiting)
+            if (rotateToNextWhileWaiting && waitTimeList[curDestination] != 0)
             {
                 rotateToNext();
             } 
@@ -96,16 +96,22 @@ public class Enemy_Movement_PointList : MonoBehaviour
 
     void rotateToNext()
     {
-        Quaternion q;
-        if (curDestination + 1 == moveAngleList.Length)
+        transform.Rotate(new Vector3(
+            0, 
+            0, 
+            (moveAngleList[curDestination + 1] - getCurAngle()) * Time.fixedDeltaTime / waitTimeList[curDestination])
+            );
+    }
+
+    float getCurAngle()
+    {
+        if(curDestination - 1 == -1)
         {
-            q = Quaternion.AngleAxis(initAngle + 90, Vector3.forward);
+            return initAngle;
         }
         else
         {
-            q = Quaternion.AngleAxis(moveAngleList[curDestination + 1] + 90, Vector3.forward);
+            return moveAngleList[curDestination];
         }
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, waitTimeList[curDestination] - curWaitTime);
     }
-
 }

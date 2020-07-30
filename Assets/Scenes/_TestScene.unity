@@ -388,9 +388,9 @@ MonoBehaviour:
   - 3
   waitTimeList:
   - 5
-  - 0
-  - 0
-  - 0
+  - 1
+  - 1
+  - 1
   linearVelocity: 3
   rotateToNextBeforeMove: 0
   rotateToNextWhileWaiting: 1
