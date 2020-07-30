@@ -134,11 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d5c9153a459d348bf2af27ace83660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10000
+  HP: 300
   crashDamage: 25
   crashalbeTarget: 1
   isInvicible: 0
-  currentHP: 0
 --- !u!114 &2386038507941225874
 MonoBehaviour:
   m_ObjectHideFlags: 0

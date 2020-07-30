@@ -5,18 +5,25 @@ using TMPro;
 using UnityEngine;
 
 public class Enemy_Movement_PointList : MonoBehaviour
-// Script of enemy to let them move from point to point
+/*
+ * Enemy movement route ai script: (still need to improve)
+ * This script is to set the straight movement route by angles with specfic time, after a route is finish, the gameObject will wait before
+ * the next route.
+ * 
+ */
 {
-    public Vector3 initPos;
-    public float initAngle;
-    public float[] moveAngleList;
-    public float[] moveTimeList;
+    public Vector3 initPos; // Initial position
+    public float initAngle; // Initial rotote angle
+    public float[] moveAngleList; // The movement angle list
+    public float[] moveTimeList; // The movement time list
     float curMoveTime;
-    public float[] waitTimeList;
+    public float[] waitTimeList; // The wait time list 
     float curWaitTime = 0;
-    public float linearVelocity;
-    public bool rotateToNextBeforeMove;
-    public bool rotateToNextWhileWaiting;
+    public float linearVelocity; // The linear velocity of the gameObject
+    // Both booleans below can turn to false if the gameObject doesn't need to rotate or other scripts are controling gameObject's roation.
+    public bool rotateToNextBeforeMove; // When true, the gameObject will instant rotate to the next angle
+    public bool rotateToNextWhileWaiting; // When true, the gameObject will slowly rotate to the next angle while in waiting
+    public bool isRouteLoop; // When true, the gameObject will loop back to the first destniation 
 
 
     Rigidbody2D enemy;
@@ -74,7 +81,11 @@ public class Enemy_Movement_PointList : MonoBehaviour
             if (curWaitTime <= 0)
             {
                 curDestination++;
-                if(curDestination == moveAngleList.Length)
+                if (isRouteLoop && curDestination == moveAngleList.Length)
+                {
+                    curDestination = 0;
+                }
+                else if(curDestination == moveAngleList.Length)
                 {
                     Destroy(gameObject);
                 }
@@ -82,7 +93,6 @@ public class Enemy_Movement_PointList : MonoBehaviour
                 onWait = false;                               
             }
         }
-        //Debug.Log(enemy.velocity.x + ", " + enemy.velocity.y);
     }
 
     Vector2 getCurVelocity()

@@ -9,7 +9,8 @@ public class _TestEnemyWeapon : MonoBehaviour
     double[] degrees = { 30, 150, 270 };
     public bool isFireAllowed;
     Common_Bullet bulletData;
-    int count = 0;
+    public float count;
+    float curCount = 0;
     
         // Start is called before the first frame update
     void Start()
@@ -25,11 +26,11 @@ public class _TestEnemyWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        count++;
-        if(count == 6 && isFireAllowed)
+        curCount -= Time.fixedDeltaTime;
+        if(curCount <= 0 && isFireAllowed)
         {
             Fire();
-            count = 0;
+            curCount = count;
         }
 
     }
@@ -41,7 +42,7 @@ public class _TestEnemyWeapon : MonoBehaviour
             bulletData.shootDegree = degrees[i];
             bullet.transform.position = enemy.transform.position;
             Instantiate(bullet);
-            degrees[i] += 5;
+            degrees[i] = (degrees[i] + 5) % 360;
         }
     }
 }
