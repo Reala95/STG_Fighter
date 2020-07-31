@@ -7,7 +7,6 @@ public class Player_SP_TurretTargetSearch : MonoBehaviour
 {
     public float aimAccuracy;
     
-    Player_SP_TurretWeaponControl turretWeapon;
     GameObject target;
 
     // Start is called before the first frame update

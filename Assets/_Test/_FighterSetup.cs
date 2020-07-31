@@ -11,6 +11,8 @@ public class _FighterSetup : MonoBehaviour
     Player_UI_HealthBarControl healthBar;
     Player_UI_SkillBarControl skillBar;
 
+    _TestBossEnterMovement boss;
+
     // Start is called before the first frame update
     void Start()
     {

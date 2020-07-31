@@ -21,6 +21,7 @@ public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
     public int clipAmount; // The number of fire phase (inifinite clip when set to -1)
     public float fireInterval; // Fire interval within a fire phase (If clip is 0, then set this to 0)
     float curFireInterval = 0;
+    public bool isFireAllowed = true;
 
     GameObject[] targetPlayer;
     bool isReloading = false;
@@ -51,31 +52,34 @@ public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isReloading)
+        if (isFireAllowed)
         {
-            curReloadTime -= Time.fixedDeltaTime;
-            if(curReloadTime <= 0)
+            if (isReloading)
             {
-                curFireInterval = 0;
-                curBulletClip = bulletClip;
-                isReloading = false;
-                isFiring = true;
+                curReloadTime -= Time.fixedDeltaTime;
+                if (curReloadTime <= 0)
+                {
+                    curFireInterval = 0;
+                    curBulletClip = bulletClip;
+                    isReloading = false;
+                    isFiring = true;
+                }
             }
-        }
-        else if (isFiring)
-        {
-            curFireInterval -= Time.fixedDeltaTime;
-            if(curFireInterval <= 0)
+            else if (isFiring)
             {
-                Fire();
-                curFireInterval = fireInterval;
-                curBulletClip--;
-            }
-            if(curBulletClip == 0)
-            {
-                curReloadTime = reloadTime;
-                isReloading = true;
-                isFiring = false;
+                curFireInterval -= Time.fixedDeltaTime;
+                if (curFireInterval <= 0)
+                {
+                    Fire();
+                    curFireInterval = fireInterval;
+                    curBulletClip--;
+                }
+                if (curBulletClip == 0)
+                {
+                    curReloadTime = reloadTime;
+                    isReloading = true;
+                    isFiring = false;
+                }
             }
         }
     }

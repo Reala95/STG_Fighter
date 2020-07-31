@@ -10,7 +10,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     float curWeaponCD = 0;
     public float overloadCD;
     float curOverloadCD = 0;
-    public bool isFireAllowed = true;
+    public bool isFireAllowed;
 
     Player_BaseWeaponControl stardustFighterWeapon;
     Player_SpecialAbilityActivation spData;
@@ -21,7 +21,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     void Start()
     {
         stardustFighterWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_BaseWeaponControl>();
-        spData = GetComponent<Player_SpecialAbilityActivation>();
+        spData = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_SpecialAbilityActivation>();
 
         fireSound = GameObject.Find("StardustTurretWeapon").GetComponent<AudioSource>();
     }
@@ -29,9 +29,13 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(turretBulletLevel != stardustFighterWeapon.baseBulletLevel)
+        if (turretBulletLevel != stardustFighterWeapon.baseBulletLevel)
         {
             turretBulletLevel = stardustFighterWeapon.baseBulletLevel;
+        }
+        if (isFireAllowed != stardustFighterWeapon.isFireAllowed)
+        {
+            isFireAllowed = stardustFighterWeapon.isFireAllowed;
         }
     }
 
@@ -39,7 +43,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     {
         if (isFireAllowed)
         {
-            if (!spData.isActivated)
+            if (!spData.getIsActivated())
             {
                 curWeaponCD -= Time.fixedDeltaTime;
                 if (curWeaponCD <= 0)

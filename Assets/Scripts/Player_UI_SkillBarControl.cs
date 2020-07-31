@@ -27,12 +27,14 @@ public class Player_UI_SkillBarControl : MonoBehaviour
         public Color color { set => img.color = value; }
     }
 
-    GameObject player;
+    GameObject player = null;
     Player_SpecialAbilityActivation playerSkill;
     SkillBarSetter skillBar;
 
-    Color inCD = new Color(0, 90 / 255, 1);
-    Color inActived = new Color(1, 200 / 255, 0);
+    public Color inCD;
+    public Color inActived;
+
+    bool isInOpt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,19 +45,21 @@ public class Player_UI_SkillBarControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!playerSkill.isActivated)
+        if (isInOpt)
         {
-            float ratio = 1 - Mathf.Min(1, playerSkill.getCurCD() / playerSkill.cd);
-            skillBar.skillState = ratio;
-            skillBar.color = inCD;
+            if (!playerSkill.getIsActivated())
+            {
+                float ratio = Mathf.Min(1, playerSkill.getCurCD() / playerSkill.cd);
+                skillBar.skillState = ratio;
+                skillBar.color = inCD;
+            }
+            else
+            {
+                float ratio = Mathf.Min(1, playerSkill.getCurDuration() / playerSkill.duration);
+                skillBar.skillState = ratio;
+                skillBar.color = inActived;
+            }
         }
-        else
-        {
-            float ratio = Mathf.Min(1, playerSkill.getCurDuration() / playerSkill.duration);
-            skillBar.skillState = ratio;
-            skillBar.color = inActived;
-        }
-        
     }
 
     public void setPlayer(GameObject player)
@@ -71,5 +75,23 @@ public class Player_UI_SkillBarControl : MonoBehaviour
         {
             skillBar = new ImageSkillBar { img = GetComponent<Image>() };
         }
+    }
+
+    public void setBarRatio(float ratio, bool isUsingCDColor)
+    {
+        skillBar.skillState = ratio;
+        if (isUsingCDColor)
+        {
+            skillBar.color = inCD;
+        }
+        else
+        {
+            skillBar.color = inActived;
+        }
+    }
+
+    public void setInOpt(bool isInOpt)
+    {
+        this.isInOpt = isInOpt;
     }
 }

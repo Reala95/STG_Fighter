@@ -8,39 +8,48 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
     float curCD = 0;
     public float duration;
     float curDuration = 0;
-    public bool isReady = false;
-    public bool isActivated = false;
+    bool isReady = false;
+    bool isSoundPlayed = false;
+    bool isActivated = false;
+    public bool isSPAllowed;
 
     // Start is called before the first frame update
     void Start()
     {
-        curCD = cd;
+        curCD = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isActivated && !isReady)
+        if (isSPAllowed)
         {
-            curCD -= Time.deltaTime;
-            if(curCD <= 0)
+            if (!isActivated && !isReady)
             {
-                isReady = true;
+                curCD += Time.deltaTime;
+                if (curCD >= cd)
+                {
+                    isReady = true;
+                }
             }
-        }
-        else if (isReady && Input.GetKey(KeyCode.Space))
-        {
-            isReady = false;
-            isActivated = true;
-            curCD = cd;
-            curDuration = duration;
-        } 
-        else if (isActivated)
-        {
-            curDuration -= Time.deltaTime;
-            if(curDuration <= 0)
+            if(isReady && !isSoundPlayed)
             {
-                isActivated = false;
+                isSoundPlayed = true;
+            }
+            else if (isReady && Input.GetKey(KeyCode.Space))
+            {
+                isReady = false;
+                isActivated = true;
+                curCD = 0;
+                curDuration = duration;
+            }
+            else if (isActivated)
+            {
+                curDuration -= Time.deltaTime;
+                if (curDuration <= 0)
+                {
+                    isActivated = false;
+                }
             }
         }
     }
@@ -53,5 +62,15 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
     public float getCurDuration()
     {
         return curDuration;
+    }
+
+    public bool getIsReady()
+    {
+        return isReady;
+    }
+
+    public bool getIsActivated()
+    {
+        return isActivated;
     }
 }

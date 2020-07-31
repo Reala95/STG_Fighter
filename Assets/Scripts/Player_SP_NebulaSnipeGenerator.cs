@@ -27,20 +27,24 @@ public class Player_SP_NebulaSnipeGenerator : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy" && spData.getIsActivated())
+        {
+            Vector3 snipePos = new Vector3(Random.Range(-7.6f, 7.6f), -5, 0);
+            nebulaSnipeBullet.GetComponent<Common_Bullet>().shootDegree = getTargetAngle(transform.position, snipePos);
+            fireSound.Play();
+            Instantiate(nebulaSnipeBullet, snipePos, Quaternion.identity);
+        }
+    }
+
     private void OnDestroy()
     {
         if (!GetComponent<Common_Bullet>().isOutOfScreen())
         {
-            if (weaponData.baseBulletLevel == 2)
+            if (weaponData.baseBulletLevel == 2 || spData.getIsActivated())
             {
                 nebulaFighterHP.heal(nebulaHealAmount);
-            }
-            if (spData.isActivated)
-            {
-                Vector3 snipePos = new Vector3(Random.Range(-7.6f, 7.6f), -5, 0);
-                nebulaSnipeBullet.GetComponent<Common_Bullet>().shootDegree = getTargetAngle(transform.position, snipePos);
-                fireSound.Play();
-                Instantiate(nebulaSnipeBullet, snipePos, Quaternion.identity);
             }
         }
     }

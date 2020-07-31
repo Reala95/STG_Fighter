@@ -12,7 +12,6 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
     GameObject solarFighter;
     Common_HP solarFighterHP;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +34,10 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
         {
             solarFighterHP.heal(shieldHealAmount);
             curShieldHealCD = shieldHealCD;
+        }
+        else if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        {
+            Destroy(gameObject);
         }
     }
 

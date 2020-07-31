@@ -24,15 +24,18 @@ public class Player_SP_VortexBlastControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spData.isActivated)
+        if (spData.isSPAllowed)
         {
-            weaponData.isFireAllowed = false;
-            isBlastAllowed = true;
-        }
-        else
-        {
-            weaponData.isFireAllowed = true;
-            isBlastAllowed = false;
+            if (spData.getIsActivated())
+            {
+                weaponData.isFireAllowed = false;
+                isBlastAllowed = true;
+            }
+            else
+            {
+                weaponData.isFireAllowed = true;
+                isBlastAllowed = false;
+            }
         }
     }
 

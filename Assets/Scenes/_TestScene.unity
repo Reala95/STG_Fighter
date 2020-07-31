@@ -141,11 +141,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3900412380228217862, guid: a8520e584cfa23a479857a0d0008342a, type: 3}
   aimAccuracy: 0.8
-  firstShotWaitTime: 0
+  firstShotWaitTime: 3
   reloadTime: 3
   bulletClip: 3
   clipAmount: -1
   fireInterval: 0.8
+  isFireAllowed: 0
+--- !u!114 &227337969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227337967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a08575096151a74fb2980d804de6608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &265570146
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +174,7 @@ GameObject:
   - component: {fileID: 265570148}
   m_Layer: 5
   m_Name: ActualHealth
-  m_TagString: Untagged
+  m_TagString: StatusBar/HP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -897,10 +910,25 @@ MonoBehaviour:
   bullet: {fileID: 3900412380228217862, guid: a8520e584cfa23a479857a0d0008342a, type: 3}
   aimAccuracy: 0.2
   firstShotWaitTime: 0
-  reloadTime: 2
+  reloadTime: 3
   bulletClip: 4
   clipAmount: -1
   fireInterval: 0.5
+  isFireAllowed: 0
+--- !u!114 &550252730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550252727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f0d22ea5c2a364b84cde8acd15172e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 8817539777460098951, guid: cac37965f6d1ef848a87d7baecba12ca, type: 3}
 --- !u!1 &578466596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1076,7 @@ GameObject:
   - component: {fileID: 608944148}
   m_Layer: 5
   m_Name: ActualSkillCD
-  m_TagString: Untagged
+  m_TagString: StatusBar/SP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,6 +1114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60c61d86c175434d8efbeece265e3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inCD: {r: 0, g: 0.47720766, b: 1, a: 1}
+  inActived: {r: 1, g: 0.77647066, b: 0, a: 1}
 --- !u!114 &608944149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -1190,7 +1220,17 @@ PrefabInstance:
     - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_Name
-      value: _TestEnemyPrefab (1)
+      value: Sniper1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506644272715357725, guid: c0bd4d1abdd38744e957d885ab245841,
+        type: 3}
+      propertyPath: HP
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2386038507941225874, guid: c0bd4d1abdd38744e957d885ab245841, type: 3}
@@ -1610,7 +1650,7 @@ RectTransform:
   - {fileID: 449243221}
   - {fileID: 1155604969}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1665,10 +1705,25 @@ MonoBehaviour:
   bullet: {fileID: 3900412380228217862, guid: a8520e584cfa23a479857a0d0008342a, type: 3}
   aimAccuracy: 0.2
   firstShotWaitTime: 0
-  reloadTime: 2
+  reloadTime: 3
   bulletClip: 4
   clipAmount: -1
   fireInterval: 0.5
+  isFireAllowed: 0
+--- !u!114 &1524614185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524614182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f0d22ea5c2a364b84cde8acd15172e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 8817539777460098951, guid: cac37965f6d1ef848a87d7baecba12ca, type: 3}
 --- !u!1 &1631408758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +1950,7 @@ PrefabInstance:
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -1925,7 +1980,7 @@ PrefabInstance:
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -1945,7 +2000,12 @@ PrefabInstance:
     - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_Name
-      value: _TestEnemyPrefab
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 506644272715357725, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -1955,7 +2015,7 @@ PrefabInstance:
     - target: {fileID: 2386038507941225874, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: isFireAllowed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2386038507941225874, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -2009,7 +2069,7 @@ PrefabInstance:
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 506644272715357713, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
@@ -2029,7 +2089,17 @@ PrefabInstance:
     - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
         type: 3}
       propertyPath: m_Name
-      value: _TestEnemyPrefab (2)
+      value: Sniper2
+      objectReference: {fileID: 0}
+    - target: {fileID: 506644272715357724, guid: c0bd4d1abdd38744e957d885ab245841,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 506644272715357725, guid: c0bd4d1abdd38744e957d885ab245841,
+        type: 3}
+      propertyPath: HP
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2386038507941225874, guid: c0bd4d1abdd38744e957d885ab245841, type: 3}

@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046242658137810995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   HP: 90
   crashDamage: 10
   crashalbeTarget: 0
-  isInvicible: 0
+  isInvicible: 1
 --- !u!114 &1046242658137810994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 18
+  isAllowMoving: 0
 --- !u!114 &-1170853422740343420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,8 +173,8 @@ MonoBehaviour:
   - {fileID: 5070232736151226195, guid: c3ff8b972666dd84caeb4bc7b4d1750f, type: 3}
   baseBulletLevel: 0
   weaponCD: 0.05
+  isFireAllowed: 0
   audioSourceName: VortexFighterWeapon
-  isFireAllowed: 1
 --- !u!114 &1907293984386270556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,10 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287f7b4d9cd80a345b8624e655b6e22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: 15
-  duration: 6
-  isReady: 0
-  isActivated: 0
+  cd: 10
+  duration: 8
+  isSPAllowed: 0
 --- !u!114 &8944643786096172912
 MonoBehaviour:
   m_ObjectHideFlags: 0

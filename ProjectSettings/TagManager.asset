@@ -10,6 +10,9 @@ TagManager:
   - Shield
   - Turret/Left
   - Turret/Right
+  - StatusBar/HP
+  - StatusBar/SP
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -11,9 +11,9 @@ public class Common_Bullet : MonoBehaviour
     public float linearVelocity;
     public double shootDegree;
     public Vector2 presetVelocity;
-    public bool isPiercing = false;
-    public bool needToRotate = false;
-    public bool hasPresetVelocity = false;
+    public bool isPiercing;
+    public bool needToRotate;
+    public bool hasPresetVelocity;
 
     Rigidbody2D bullet;
     Common_HP targetHP;

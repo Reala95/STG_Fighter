@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687488646414157737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
   HP: 60
   crashDamage: 5
   crashalbeTarget: 0
-  isInvicible: 0
+  isInvicible: 1
 --- !u!114 &1687488646414157738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 18
+  isAllowMoving: 0
 --- !u!114 &129920812822964779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   - {fileID: 8353083009364461957, guid: f4b347ff45e18a74cbff8560c30a3ad7, type: 3}
   baseBulletLevel: 0
   weaponCD: 0.2
-  isFireAllowed: 1
+  isFireAllowed: 0
   audioSourceName: StardustFighterWeapon
 --- !u!114 &400639324267492907
 MonoBehaviour:
@@ -189,3 +190,4 @@ MonoBehaviour:
   duration: 8
   isReady: 0
   isActivated: 0
+  isSPAllowed: 0

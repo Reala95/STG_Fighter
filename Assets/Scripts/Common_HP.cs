@@ -8,10 +8,11 @@ public class Common_HP : MonoBehaviour
     public int HP;
     public int crashDamage;
     public int crashalbeTarget; // 0 = Enemy; 1 = Player
-    public bool isInvicible = false;
+    public bool isInvicible;
     int maxHP;
     int currentHP;
-    Common_HP crashTargetHP;
+
+    Enemy_DropItemWhenDie itemDrop;
 
     // String array for checking target tag
     string[] targetList = { "Enemy", "Player" };
@@ -21,6 +22,10 @@ public class Common_HP : MonoBehaviour
     {
         maxHP = HP;
         currentHP = HP;
+        if(transform.tag == "Enemy")
+        {
+            itemDrop = GetComponent<Enemy_DropItemWhenDie>();
+        }
     }
 
     // Update is called once per frame
@@ -28,6 +33,10 @@ public class Common_HP : MonoBehaviour
     {
         if(currentHP == 0)
         {
+            if (itemDrop != null)
+            {
+                itemDrop.Drop();
+            }
             Destroy(gameObject);
         }
     }
@@ -36,7 +45,7 @@ public class Common_HP : MonoBehaviour
     {
         if(collision.gameObject.tag != "Bullet" && collision.gameObject.tag == targetList[crashalbeTarget])
         {
-            crashTargetHP = collision.gameObject.GetComponent<Common_HP>();
+            Common_HP crashTargetHP = collision.gameObject.GetComponent<Common_HP>();
             if (!crashTargetHP.isInvicible)
             {
                 crashTargetHP.damage(crashDamage);

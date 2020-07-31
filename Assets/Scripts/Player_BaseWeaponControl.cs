@@ -8,7 +8,7 @@ public class Player_BaseWeaponControl : MonoBehaviour
     public int baseBulletLevel = 0;
     public float weaponCD;
     float curWeaponCD = 0;
-    public bool isFireAllowed = true;
+    public bool isFireAllowed;
 
     public string audioSourceName;
     AudioSource fireSound;
@@ -47,6 +47,6 @@ public class Player_BaseWeaponControl : MonoBehaviour
 
     public void WeaponLevelUp()
     {
-        baseBulletLevel += Mathf.Min(2, baseBulletLevel + 1);
+        baseBulletLevel = Mathf.Min(2, baseBulletLevel + 1);
     }
 }

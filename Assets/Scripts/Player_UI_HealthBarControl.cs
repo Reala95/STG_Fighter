@@ -28,12 +28,15 @@ public class Player_UI_HealthBarControl : MonoBehaviour
         public Color color { set => img.color = value; }
     }
 
-    public AnimationCurve redCurve;
-    public AnimationCurve greenCurve;
-    public AnimationCurve blueCurve;
     GameObject player = null;
     Common_HP playerHP;
     HealthBarSetter healthBar;
+
+    public AnimationCurve redCurve;
+    public AnimationCurve greenCurve;
+    public AnimationCurve blueCurve;
+
+    bool isInOpt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,20 @@ public class Player_UI_HealthBarControl : MonoBehaviour
             healthBar = new ImageHealthBar { img = GetComponent<Image>() };
         }
 
+    }
+
+    public void setBarRatio(float ratio)
+    {
+        healthBar.NormalizedHP = ratio;
+        float r = redCurve.Evaluate(ratio);
+        float g = greenCurve.Evaluate(ratio);
+        float b = blueCurve.Evaluate(ratio);
+        healthBar.color = new Color(r, g, b);
+    }
+
+    public void setInOpt(bool isInOpt)
+    {
+        this.isInOpt = isInOpt;
     }
 }
 
