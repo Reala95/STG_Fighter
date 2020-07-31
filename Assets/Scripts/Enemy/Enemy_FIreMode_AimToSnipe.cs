@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
+public class Enemy_FireMode_AimToSnipe : MonoBehaviour
 /* 
  * Enmey firemode ai script:
  * When using this script, the enemy with rotate toward to player, and fire by specific rate. (see attribute below)
@@ -38,7 +38,7 @@ public class Enemy_FIreMode_AimToSnipe : MonoBehaviour
     void Update()
     {
         targetPlayer = GameObject.FindGameObjectsWithTag("Player");
-        if(targetPlayer.Length != 0)
+        if (targetPlayer.Length != 0)
         {
             Quaternion q = Quaternion.AngleAxis(getTargetAngle(targetPlayer.First()) + 90, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, aimAccuracy);

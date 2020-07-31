@@ -186,8 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287f7b4d9cd80a345b8624e655b6e22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: 15
+  cd: 16
   duration: 8
-  isReady: 0
-  isActivated: 0
   isSPAllowed: 0

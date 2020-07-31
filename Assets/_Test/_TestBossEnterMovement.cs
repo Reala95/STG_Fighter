@@ -12,16 +12,16 @@ public class _TestBossEnterMovement : MonoBehaviour
     bool entering = true;
     bool setAll = false;
 
-    Enemy_FIreMode_AimToSnipe boss, snp1, snp2;
+    Enemy_FireMode_AimToSnipe boss, snp1, snp2;
     _TestEnemyWeapon bossW;
 
     // Start is called before the first frame update
     void Start()
     {
         bossW = GetComponent<_TestEnemyWeapon>();
-        boss = GetComponent<Enemy_FIreMode_AimToSnipe>();
-        snp1 = GameObject.Find("Sniper1").GetComponent<Enemy_FIreMode_AimToSnipe>();
-        snp2 = GameObject.Find("Sniper2").GetComponent<Enemy_FIreMode_AimToSnipe>();
+        boss = GetComponent<Enemy_FireMode_AimToSnipe>();
+        snp1 = GameObject.Find("Sniper1").GetComponent<Enemy_FireMode_AimToSnipe>();
+        snp2 = GameObject.Find("Sniper2").GetComponent<Enemy_FireMode_AimToSnipe>();
     }
 
     // Update is called once per frame
