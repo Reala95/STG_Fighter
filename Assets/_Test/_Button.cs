@@ -41,6 +41,6 @@ public class _Button : MonoBehaviour
 
     void startBtn()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("_TestScene");
     }
 }

@@ -38,7 +38,6 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
         Quaternion q = Quaternion.AngleAxis(getRotateAngle(movePointList[curRoute]) + 90, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
         totalRoute = movePointList.Length;
-        outputAsJson();
         if(waitTimeList.Length != totalRoute || linearVelocityList.Length != totalRoute)
         {
             Debug.LogError(gameObject.name + ": route number not match, this gameObject has been deleted.");
@@ -123,12 +122,5 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
         rotateWhileWaiting = data.rotateWhileWaiting;
         rotateBeforeMoving = data.rotateBeforeMoving;
         isLooping = data.isLooping;
-    }
-
-    public void outputAsJson()
-    {
-        P2PMovementData data = new P2PMovementData(initPos, movePointList, waitTimeList, linearVelocityList, rotateWhileWaiting, rotateBeforeMoving, isLooping);
-        string json = JsonUtility.ToJson(data);
-        Debug.Log(json);
     }
 }

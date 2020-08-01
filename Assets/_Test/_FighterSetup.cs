@@ -11,8 +11,6 @@ public class _FighterSetup : MonoBehaviour
     Player_UI_HealthBarControl healthBar;
     Player_UI_SkillBarControl skillBar;
 
-    _TestBossEnterMovement boss;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +25,7 @@ public class _FighterSetup : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         healthBar.setPlayer(player);
         skillBar.setPlayer(player);
+        //Destroy(GameObject.FindGameObjectWithTag("FakePlayer"));
     }
 
     // Update is called once per frame

@@ -37,6 +37,7 @@ public class Player_MovemovementControl : MonoBehaviour
         playerHP = GetComponent<Common_HP>();
         playerHP.isInvicible = true;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         initPos = transform.position;
         healthBar = GameObject.FindGameObjectWithTag("StatusBar/HP").GetComponent<Player_UI_HealthBarControl>();
@@ -59,10 +60,7 @@ public class Player_MovemovementControl : MonoBehaviour
     {
         if (isAllowMoving)
         {
-            Vector2 mouse = new Vector2(
-            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, -7.1f, 7.1f),
-            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).y, -4.1f, 4.1f)
-            );
+            Vector2 mouse = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
             player.velocity = sensitivity * (mouse - (Vector2)transform.position);
         }
         else if (isOnReady)
@@ -73,7 +71,7 @@ public class Player_MovemovementControl : MonoBehaviour
             {
                 isOnReady = false;
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
                 isAllowMoving = true;
                 playerWeapon.isFireAllowed = true;
                 playerSP.isSPAllowed = true;

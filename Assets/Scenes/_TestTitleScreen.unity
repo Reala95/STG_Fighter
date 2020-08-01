@@ -453,7 +453,7 @@ Canvas:
   m_GameObject: {fileID: 312042491}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 2089983945}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -473,8 +473,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312042491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.022624435, y: 0.022624435, z: 0.022624435}
   m_Children:
   - {fileID: 186187124}
   - {fileID: 1436690059}
@@ -487,8 +487,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 660, y: 442}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &474370787
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Start
 --- !u!222 &474370790
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1202,10 +1202,20 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 337254319284951311, guid: 0824114c736ec154bbdcedb5a95d9405,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 172ef130907f72541bf3d16415ea99fd, type: 3}
     - target: {fileID: 337254319284951536, guid: 0824114c736ec154bbdcedb5a95d9405,
         type: 3}
       propertyPath: m_Name
       value: _TestBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 337254319284951536, guid: 0824114c736ec154bbdcedb5a95d9405,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0824114c736ec154bbdcedb5a95d9405, type: 3}
