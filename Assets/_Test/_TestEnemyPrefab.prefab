@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 506644272715357715}
   - component: {fileID: 506644272715357714}
   - component: {fileID: 506644272715357725}
-  - component: {fileID: 2386038507941225874}
+  - component: {fileID: -7570891593621290353}
   m_Layer: 0
   m_Name: _TestEnemyPrefab
   m_TagString: Enemy
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d5c9153a459d348bf2af27ace83660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 300
+  HP: 10
   crashDamage: 25
   crashalbeTarget: 1
   isInvicible: 0
---- !u!114 &2386038507941225874
+--- !u!114 &-7570891593621290353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,9 +147,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 506644272715357724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2c7e5a4337a754fa8f003e31e352e8, type: 3}
+  m_Script: {fileID: 11500000, guid: e5a581b81ea34ac49809e4253656ab96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 506644272715357724}
-  bullet: {fileID: 589402032386365500, guid: f167c8862bc6b3245bba9eb633a26ec7, type: 3}
-  isFireAllowed: 1
+  initPos: {x: 0, y: 0, z: 0}
+  movePointList: []
+  waitTimeList: []
+  linearVelocityList: []
+  rotateWhileWaiting: 0
+  rotateBeforeMoving: 0
+  isLooping: 0

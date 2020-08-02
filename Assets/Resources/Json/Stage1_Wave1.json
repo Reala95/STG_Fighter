@@ -1,0 +1,164 @@
+{
+	"list" :
+	[
+		{
+			"index": "0",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+		
+		{
+			"index": "1",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "2",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "3",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "4",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "5",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "6",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		},
+
+		{
+			"index": "7",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0} ,
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":-6.0,"y":5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				8.0,
+				8.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":true,
+			"isLooping":false
+		}
+	]
+}

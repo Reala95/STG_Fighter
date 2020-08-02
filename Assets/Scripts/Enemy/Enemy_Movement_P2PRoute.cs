@@ -88,7 +88,6 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
             {
                 onMove = true;
                 onWait = false;
-                curRoute = getNextRouteNumber();
                 if (rotateBeforeMoving)
                 {
                     transform.rotation = Quaternion.Slerp(curRot, targetRot, 1);
@@ -98,6 +97,7 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
+                curRoute = getNextRouteNumber();
             }
         }
     }
@@ -113,7 +113,7 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
         return (curRoute + 1) % totalRoute;
     }
 
-    public void setUpByJson(P2PMovementDataList.P2PMovementData data)
+    public void setUpByJson(P2PMovementData data)
     {
         initPos = data.initPos;
         movePointList = data.movePointList;
