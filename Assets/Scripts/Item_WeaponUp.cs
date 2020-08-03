@@ -7,13 +7,12 @@ public class Item_WeaponUp : MonoBehaviour
     public Vector2 velocity;
 
     Rigidbody2D item;
-    bool outOfScreen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         item = GetComponent<Rigidbody2D>();
-        item.velocity = this.velocity;
+        item.velocity = velocity;
     }
 
     // Update is called once per frame
@@ -24,9 +23,9 @@ public class Item_WeaponUp : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.x > 7.6 || transform.position.x < -7.6 || transform.position.y > 5 || transform.position.y < -5)
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPos.x < -10 || screenPos.y < -10 || screenPos.x > Screen.width + 20 || screenPos.y > Screen.height + 20)
         {
-            outOfScreen = true;
             Destroy(gameObject);
         }
     }
@@ -41,9 +40,5 @@ public class Item_WeaponUp : MonoBehaviour
             Debug.Log("LevelUp!");
             Destroy(gameObject);
         }
-    }
-    public bool isOutOfScreen()
-    {
-        return outOfScreen;
     }
 }

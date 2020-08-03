@@ -8,14 +8,21 @@ public class _TestEnemyWeapon : MonoBehaviour
     public GameObject bullet;
     double[] degrees = { 30, 150, 270 };
     public bool isFireAllowed;
+    public float firstFire;
     Common_Bullet bulletData;
     public float count;
     float curCount = 0;
+
+    AudioSource stageBGM;
+    AudioSource BossBGM;
     
         // Start is called before the first frame update
     void Start()
     {
         bulletData = bullet.GetComponent<Common_Bullet>();
+        stageBGM = GameObject.Find("StageBGM").GetComponent<AudioSource>();
+        stageBGM.Stop();
+        BossBGM = GameObject.Find("BossBGM").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,11 +33,23 @@ public class _TestEnemyWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        curCount -= Time.fixedDeltaTime;
-        if(curCount <= 0 && isFireAllowed)
+        if (!isFireAllowed)
         {
-            Fire();
-            curCount = count;
+            firstFire -= Time.fixedDeltaTime;
+            if(firstFire <= 0)
+            {
+                isFireAllowed = true;
+                BossBGM.Play();
+            }
+        }
+        else if (isFireAllowed)
+        {
+            curCount -= Time.fixedDeltaTime;
+            if (curCount <= 0)
+            {
+                Fire();
+                curCount = count;
+            }
         }
 
     }

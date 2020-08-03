@@ -30,16 +30,18 @@ public class Player_UI_SkillBarControl : MonoBehaviour
     GameObject player = null;
     Player_SpecialAbilityActivation playerSkill;
     SkillBarSetter skillBar;
+    Text skillText;
 
     public Color inCD;
     public Color inActived;
 
     bool isInOpt = false;
+    bool isTextReady = true;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        skillText = GameObject.Find("SPReadyText").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,16 @@ public class Player_UI_SkillBarControl : MonoBehaviour
     {
         if (isInOpt)
         {
+            if (playerSkill.getIsReady() && !isTextReady)
+            {
+                skillText.text = StaticGameData.skillText[StaticGameData.selection];
+                isTextReady = true;
+            }
+            else if (!playerSkill.getIsReady() && isTextReady)
+            {
+                skillText.text = "";
+                isTextReady = false;
+            }
             if (!playerSkill.getIsActivated())
             {
                 float ratio = Mathf.Min(1, playerSkill.getCurCD() / playerSkill.cd);

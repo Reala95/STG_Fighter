@@ -21,10 +21,7 @@ public class Player_SP_SolarShieldMoving : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        Vector2 mouse = new Vector2(
-            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, -7.1f, 7.1f),
-            Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition).y, -4.1f, 4.1f)
-            );
+        Vector2 mouse = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
         solarShield.velocity = sensitivity * (mouse - (Vector2)transform.position);
         if (size < 4)
         {

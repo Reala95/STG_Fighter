@@ -13,7 +13,6 @@ TagManager:
   - StatusBar/HP
   - StatusBar/SP
   - Item
-  - FakePlayer
   layers:
   - Default
   - TransparentFX

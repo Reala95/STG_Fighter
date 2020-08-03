@@ -24,7 +24,7 @@ public class Player_SP_StardustTurretFllowing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(GameObject.FindGameObjectsWithTag("Player").Length == 0)
+        if(stardustFighter == null)
         {
             Destroy(gameObject);
         }

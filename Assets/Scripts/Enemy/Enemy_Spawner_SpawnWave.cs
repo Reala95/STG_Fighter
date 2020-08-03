@@ -12,10 +12,11 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
 {
     public int waveNum; // This number is only used to determine the waves in editor
     public GameObject[] enemyPrefab; // List of enemy will show up in this wave
-    public int[] spawnOrder; // Enemy spawn order, this array's elements are the index number of enemyPrefab array
-    public float[] spawnInterval; // Wait time before the enemy spawn
     public TextAsset MovementDataJson; // Json file that use to setup enemy's run route
     P2PMovementDataList movementData;
+    public int[] spawnOrder; // Enemy spawn order, this array's elements are the index number of enemyPrefab array
+    public int[] movementOrder; // Enemy movement route order, this array's elements are the index number of movementData.list
+    public float[] spawnInterval; // Wait time before the enemy spawn
     public bool isThisWaveInOpt; // Bool to enable/disable this wave
 
     int totalSpawnNum;
@@ -49,7 +50,7 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
             curInterval += Time.fixedDeltaTime;
             if (curInterval > spawnInterval[curIndex])
             {
-                enemyPrefab[spawnOrder[curIndex]].GetComponent<Enemy_Movement_P2PRoute>().setUpByJson(movementData.list[curIndex]);
+                enemyPrefab[spawnOrder[curIndex]].GetComponent<Enemy_Movement_P2PRoute>().setUpByJson(movementData.list[movementOrder[curIndex]]);
                 Instantiate(enemyPrefab[spawnOrder[curIndex]]);
                 if (curIndex + 1 == totalSpawnNum)
                 {

@@ -14,6 +14,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
 
     Player_BaseWeaponControl stardustFighterWeapon;
     Player_SpecialAbilityActivation spData;
+    Player_SP_TurretTargetSearch radar;
 
     AudioSource fireSound;
 
@@ -22,6 +23,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
     {
         stardustFighterWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_BaseWeaponControl>();
         spData = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_SpecialAbilityActivation>();
+        radar = GetComponent<Player_SP_TurretTargetSearch>();
 
         fireSound = GameObject.Find("StardustTurretWeapon").GetComponent<AudioSource>();
     }
@@ -49,6 +51,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
                 if (curWeaponCD <= 0)
                 {
                     Fire();
+                    radar.setNewTarget();
                     curWeaponCD = weaponCD;
                 }
             }
@@ -58,6 +61,7 @@ public class Player_SP_TurretWeaponControl : MonoBehaviour
                 if (curOverloadCD < 0)
                 {
                     Fire();
+                    radar.setNewTarget();
                     curOverloadCD = overloadCD;
                 }
             }

@@ -17,7 +17,6 @@ public class Common_Bullet : MonoBehaviour
 
     Rigidbody2D bullet;
     Common_HP targetHP;
-    bool outOfScreen = false;
 
 
     // String array for checking target tag
@@ -45,9 +44,9 @@ public class Common_Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > 7.6 || transform.position.x < -7.6 || transform.position.y >5 || transform.position.y < -5)
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPos.x < -10 || screenPos.y < -10 || screenPos.x > Screen.width + 20 || screenPos.y > Screen.height + 20)
         {
-            outOfScreen = true;
             Destroy(gameObject);
         }
     }
@@ -77,10 +76,5 @@ public class Common_Bullet : MonoBehaviour
             linearVelocity * Convert.ToSingle(Math.Cos(Math.PI * shootDegree / 180)),
             linearVelocity * Convert.ToSingle(Math.Sin(Math.PI * shootDegree / 180))
             );
-    }
-
-    public bool isOutOfScreen()
-    {
-        return outOfScreen;
     }
 }

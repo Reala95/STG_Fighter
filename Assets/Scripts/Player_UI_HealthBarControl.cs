@@ -37,28 +37,21 @@ public class Player_UI_HealthBarControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("FakePlayer");
-        playerHP = player.GetComponent<Common_HP>();
-        var sprite = GetComponent<SpriteRenderer>();
-        if (sprite != null)
-        {
-            healthBar = new SpriteHealthBar { renderer = sprite };
-        }
-        else
-        {
-            healthBar = new ImageHealthBar { img = GetComponent<Image>() };
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isInOpt)
+        {
             float ratio = (float)playerHP.getCurrentHP() / playerHP.getMaxHP();
             healthBar.NormalizedHP = ratio;
 
             float r = redCurve.Evaluate(ratio);
             float g = greenCurve.Evaluate(ratio);
             healthBar.color = new Color(r, g, 0);
+        }
     }
 
     public void setPlayer(GameObject player)
