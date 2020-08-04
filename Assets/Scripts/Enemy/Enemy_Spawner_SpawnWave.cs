@@ -23,6 +23,7 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
     int curIndex = 0;
     float curInterval = 0;
     bool hasMainSpawner;
+    bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,7 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isThisWaveInOpt)
+        if (isThisWaveInOpt && !isPaused)
         {
             curInterval += Time.fixedDeltaTime;
             if (curInterval > spawnInterval[curIndex])
@@ -88,5 +89,15 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
     public void turnOff()
     {
         isThisWaveInOpt = false;
+    }
+
+    public void setPause(bool p)
+    {
+        isPaused = p;
+    }
+
+    public bool getPause()
+    {
+        return isPaused;
     }
 }

@@ -13,16 +13,20 @@ public class _TestEnemyWeapon : MonoBehaviour
     public float count;
     float curCount = 0;
 
+    GameObject winMenu;
+    UI_GamePasue pauseSetter;
     AudioSource stageBGM;
     AudioSource BossBGM;
     
         // Start is called before the first frame update
     void Start()
     {
+        winMenu = StaticGameData.winMenu;
+        pauseSetter = StaticGameData.pasueSetter;
         bulletData = bullet.GetComponent<Common_Bullet>();
-        stageBGM = GameObject.Find("StageBGM").GetComponent<AudioSource>();
+        stageBGM = GameObject.FindGameObjectWithTag("bgmPlayer/Stage").GetComponent<AudioSource>();
         stageBGM.Stop();
-        BossBGM = GameObject.Find("BossBGM").GetComponent<AudioSource>();
+        BossBGM = GameObject.FindGameObjectWithTag("bgmPlayer/Boss").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,5 +67,14 @@ public class _TestEnemyWeapon : MonoBehaviour
             Instantiate(bullet);
             degrees[i] = (degrees[i] + 5) % 360;
         }
+    }
+
+    private void OnDestroy()
+    {
+        pauseSetter.isAvaliable = false;
+        Time.timeScale = 0.0f;
+        winMenu.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

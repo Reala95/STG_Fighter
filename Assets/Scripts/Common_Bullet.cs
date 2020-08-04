@@ -6,7 +6,8 @@ using UnityEngine;
 public class Common_Bullet : MonoBehaviour
 // Script for base bullet
 {
-    public int atk;
+    // Basic data setting for bullet object
+    public int atk; 
     public int target; // 0 = Enemy; 1 = Player
     public float linearVelocity;
     public double shootDegree;
@@ -14,7 +15,6 @@ public class Common_Bullet : MonoBehaviour
     public bool isPiercing;
     public bool needToRotate;
     public bool hasPresetVelocity;
-
     Rigidbody2D bullet;
     Common_HP targetHP;
 

@@ -4,14 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Common_HP : MonoBehaviour
+// Script for all object with HP
 {
+    // Basic HP related data setting
     public int HP;
-    public int crashDamage;
-    public int crashalbeTarget; // 0 = Enemy; 1 = Player
-    public bool isInvicible;
     int maxHP;
     int currentHP;
+    public bool isInvicible;
 
+    // Crash attack realated 
+    public int crashDamage;
+    public int crashDefence;
+    public int crashalbeTarget; // 0 = Enemy; 1 = Player
+    
+    // Item drop related for enemy object
     Enemy_DropItemWhenDie itemDrop;
 
     // String array for checking target tag
@@ -48,7 +54,7 @@ public class Common_HP : MonoBehaviour
             Common_HP crashTargetHP = collision.gameObject.GetComponent<Common_HP>();
             if (!crashTargetHP.isInvicible)
             {
-                crashTargetHP.damage(crashDamage);
+                crashTargetHP.crash(crashDamage);
             }
         }
         else
@@ -60,6 +66,11 @@ public class Common_HP : MonoBehaviour
     public void damage(int hit)
     {
         currentHP = Math.Max(0, currentHP - hit);
+    }
+
+    public void crash(int hit)
+    {
+        currentHP = Math.Max(0, currentHP - Mathf.Max(hit - crashDefence, 0));
     }
 
     public void heal(int hit)

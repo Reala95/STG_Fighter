@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 1218472754963213612, guid: cbdb7416dcbecdd43b96285ff25f1a69,
         type: 3}
       propertyPath: shootDegree
-      value: -5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4066289200413785316, guid: cbdb7416dcbecdd43b96285ff25f1a69,
         type: 3}

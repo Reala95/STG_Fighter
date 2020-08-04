@@ -17,6 +17,7 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
     int curWave = 0;
     float curInterval = 0;
     bool waveInopt = false;
+    bool isPaused = false;
     
     // Start is called before the first frame update
     void Start()
@@ -48,9 +49,27 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
                 Debug.Log(gameObject.name + ": Deleting spawner.");
                 Destroy(gameObject);
             }
-        }
-        else if (!waveInopt)
+        } 
+        else if (isPaused)
         {
+            if(isPaused != spawnWaves[waveOrder[curWave]].getPause())
+            {
+                spawnWaves[waveOrder[curWave]].setPause(isPaused);
+            }
+        }
+        else if (!isPaused && waveInopt)
+        {
+            if (isPaused != spawnWaves[waveOrder[curWave]].getPause())
+            {
+                spawnWaves[waveOrder[curWave]].setPause(isPaused);
+            }
+        }
+        else if (!isPaused && !waveInopt)
+        {
+            if (isPaused != spawnWaves[waveOrder[curWave]].getPause())
+            {
+                spawnWaves[waveOrder[curWave]].setPause(isPaused);
+            }
             curInterval += Time.fixedDeltaTime;
             if (curInterval > waveInterval[curWave])
             {
@@ -65,5 +84,10 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
         curWave++;
         curInterval = 0;
         waveInopt = false;
+    }
+
+    public void setPause(bool p)
+    {
+        isPaused = p;
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Item_WeaponUp : MonoBehaviour
+// Item script: Weapon Level Up Item
 {
     public Vector2 velocity;
-
     Rigidbody2D item;
 
     // Start is called before the first frame update
@@ -32,12 +32,10 @@ public class Item_WeaponUp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Touched!");
         if (collision.gameObject.tag == "Player")
         {
             Player_BaseWeaponControl playerWeapon = collision.gameObject.GetComponent<Player_BaseWeaponControl>();
             playerWeapon.WeaponLevelUp();
-            Debug.Log("LevelUp!");
             Destroy(gameObject);
         }
     }

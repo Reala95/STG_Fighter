@@ -3,19 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Common_ObjectDelet : MonoBehaviour
+// Script for empty parent object to self deleted when children objects are all destroyed
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         if(transform.childCount == 0)
