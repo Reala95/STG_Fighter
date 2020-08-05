@@ -16,7 +16,7 @@ public class Enemy_FireMode_AimToSnipeBulletSet : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             Common_Bullet bulletData = transform.GetChild(i).GetComponent<Common_Bullet>();
-            bulletData.shootDegree = angle.z + bulletData.shootDegree - 90;
+            bulletData.shootDegree = angle.z + bulletData.shootDegree;
         }
     }
 

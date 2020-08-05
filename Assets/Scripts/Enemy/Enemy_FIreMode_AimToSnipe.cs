@@ -52,7 +52,7 @@ public class Enemy_FireMode_AimToSnipe : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isFireAllowed)
+        if (isFireAllowed && (clipAmount > 0 || clipAmount == -1))
         {
             if (isReloading)
             {
@@ -77,6 +77,10 @@ public class Enemy_FireMode_AimToSnipe : MonoBehaviour
                 if (curBulletClip == 0)
                 {
                     curReloadTime = reloadTime;
+                    if(clipAmount > 0)
+                    {
+                        clipAmount--;
+                    }
                     isReloading = true;
                     isFiring = false;
                 }

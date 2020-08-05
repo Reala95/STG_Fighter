@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -35,8 +36,11 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
     {
         transform.position = initPos;
         curPos = initPos;
-        Quaternion q = Quaternion.AngleAxis(getRotateAngle(movePointList[curRoute]) + 90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
+        if(rotateBeforeMoving || rotateWhileWaiting)
+        {
+            Quaternion q = Quaternion.AngleAxis(getRotateAngle(movePointList[curRoute]) + 90, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
+        }
         totalRoute = movePointList.Length;
         if(waitTimeList.Length != totalRoute || linearVelocityList.Length != totalRoute)
         {
@@ -122,5 +126,20 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
         rotateWhileWaiting = data.rotateWhileWaiting;
         rotateBeforeMoving = data.rotateBeforeMoving;
         isLooping = data.isLooping;
+    }
+
+    public int getCurRoute()
+    {
+        return curRoute;
+    }
+
+    public bool isOnMove()
+    {
+        return onMove;
+    }
+    
+    public bool isOnWait()
+    {
+        return onWait;
     }
 }
