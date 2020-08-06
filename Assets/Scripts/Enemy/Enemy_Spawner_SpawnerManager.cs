@@ -17,7 +17,7 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
     int curWave = 0;
     float curInterval = 0;
     bool waveInopt = false;
-    bool isPaused = false;
+    public bool isPaused = false;
     
     // Start is called before the first frame update
     void Start()

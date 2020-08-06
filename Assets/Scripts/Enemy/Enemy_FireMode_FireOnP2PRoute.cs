@@ -79,4 +79,14 @@ public class Enemy_FireMode_FireOnP2PRoute : MonoBehaviour
         }
         Instantiate(bullet, transform.position, Quaternion.identity);
     }
+
+    public void setByJson(FireModeData data)
+    {
+        firstShotWaitTime = data.firstShotWaitTime;
+        reloadTime = data.reloadTime;
+        bulletClip = data.bulletClip;
+        clipAmount = data.clipAmount;
+        fireInterval = data.fireInterval;
+        isFireAllowed = data.isFireAllowed;
+    }
 }

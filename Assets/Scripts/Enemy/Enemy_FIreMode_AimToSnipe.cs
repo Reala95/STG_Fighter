@@ -31,6 +31,7 @@ public class Enemy_FireMode_AimToSnipe : MonoBehaviour
     void Start()
     {
         curReloadTime = firstShotWaitTime;
+        Debug.Log(curReloadTime);
         isReloading = true;
     }
 
@@ -98,5 +99,15 @@ public class Enemy_FireMode_AimToSnipe : MonoBehaviour
     {
         bullet.GetComponent<Enemy_FireMode_AimToSnipeBulletSet>().angle = transform.eulerAngles;
         Instantiate(bullet, transform.position, Quaternion.identity);
+    }
+
+    public void setByJson(FireModeData data)
+    {
+        this.firstShotWaitTime = data.firstShotWaitTime;
+        this.reloadTime = data.reloadTime;
+        this.bulletClip = data.bulletClip;
+        this.clipAmount = data.clipAmount;
+        this.fireInterval = data.fireInterval;
+        this.isFireAllowed = data.isFireAllowed;
     }
 }

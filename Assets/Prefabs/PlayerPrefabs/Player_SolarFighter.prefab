@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 4211139672950189500, guid: ee40e6f4568a14f428dc9dde3442639b, type: 3}
   - {fileID: 7997044552946202645, guid: ad755de066b86a042bad51d421a997a1, type: 3}
   - {fileID: 7771275750635109737, guid: a1d1bca41974fba4d831c09a98292fdd, type: 3}
-  baseBulletLevel: 0
+  baseBulletLevel: 2
   weaponCD: 0.2
   isFireAllowed: 0
   audioSourceName: SolarFighterWeapon

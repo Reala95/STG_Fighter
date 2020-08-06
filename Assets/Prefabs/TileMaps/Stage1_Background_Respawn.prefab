@@ -7667,7 +7667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 9024506436738336668}
-  rollingSpeed: 3
+  rollingSpeed: 1
   startPoint: {x: 0, y: 21, z: 0}
   transPoint: {x: 0, y: -4, z: 0}
   endPoint: {x: 0, y: -14, z: 0}

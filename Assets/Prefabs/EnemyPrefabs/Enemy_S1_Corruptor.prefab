@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6962846786865796221}
   - component: {fileID: 6962846786865796220}
   - component: {fileID: 6962846786865796219}
+  - component: {fileID: 2229341196203149143}
   - component: {fileID: -8826345727081504446}
   m_Layer: 0
   m_Name: Enemy_S1_Corruptor
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d5c9153a459d348bf2af27ace83660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 8
+  HP: 25
   isInvicible: 0
   crashDamage: 25
   crashDefence: 0
@@ -152,13 +153,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a581b81ea34ac49809e4253656ab96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initPos: {x: 0, y: 0, z: 0}
-  movePointList: []
-  waitTimeList: []
-  linearVelocityList: []
+  initPos: {x: -6, y: 5.5, z: 0}
+  movePointList:
+  - {x: -6, y: 2.5, z: 0}
+  - {x: 6, y: 2.5, z: 0}
+  - {x: 6, y: -5.5, z: 0}
+  waitTimeList:
+  - 0
+  - 0
+  - 0
+  linearVelocityList:
+  - 2
+  - 3
+  - 2
+  specialRouteType: 0
   rotateWhileWaiting: 0
-  rotateBeforeMoving: 1
+  rotateBeforeMoving: 0
   isLooping: 0
+  hasSpecialRoute: 0
+--- !u!114 &2229341196203149143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6962846786865796218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb49818d0fdcea4792f7fd274ee45ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routeType: 0
+  velocity: 2
+  curve: 2.5
+  moveTime: 15
 --- !u!114 &-8826345727081504446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,10 +200,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 47955968795854772, guid: 305a6ea3f25394940aaf731a63183782, type: 3}
-  firstShotWaitTime: 1
-  reloadTime: 3
-  bulletClip: 2
-  clipAmount: 1
-  fireInterval: 0.5
+  firstShotWaitTime: 0
+  reloadTime: 0
+  bulletClip: 0
+  clipAmount: 0
+  fireInterval: 0
   isFollowingParentsRotation: 0
   isFireAllowed: 1

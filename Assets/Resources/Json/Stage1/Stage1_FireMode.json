@@ -1,0 +1,44 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"firstShotWaitTime": 2.0,
+			"reloadTime": 0.75,
+			"bulletClip": "1",
+			"clipAmount": "3",
+			"fireInterval": 0.5,
+			"isFireAllowed": true
+		},
+
+		{
+		"index": "1",
+			"firstShotWaitTime": 0.5,
+			"reloadTime": 0.6,
+			"bulletClip": "1",
+			"clipAmount": "-1",
+			"fireInterval": 0.5,
+			"isFireAllowed": true
+		},
+
+		{
+		"index": "2",
+			"firstShotWaitTime": 2.0,
+			"reloadTime": 3.0,
+			"bulletClip": "2",
+			"clipAmount": "-1",
+			"fireInterval": 0.75,
+			"isFireAllowed": true
+		},
+
+		{
+		"index": "3",
+			"firstShotWaitTime": 8.0,
+			"reloadTime": 3.0,
+			"bulletClip": "12",
+			"clipAmount": "-1",
+			"fireInterval": 0.75,
+			"isFireAllowed": true
+		}
+	]
+}

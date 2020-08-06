@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d5c9153a459d348bf2af27ace83660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
+  HP: 400
   isInvicible: 0
   crashDamage: 50
   crashDefence: 10
@@ -253,9 +253,11 @@ MonoBehaviour:
   movePointList: []
   waitTimeList: []
   linearVelocityList: []
+  specialRouteType: 0
   rotateWhileWaiting: 0
   rotateBeforeMoving: 0
   isLooping: 0
+  hasSpecialRoute: 0
 --- !u!114 &3321539739078129449
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992383764156082899}
   - component: {fileID: 2159818407770191856}
+  - component: {fileID: 792371658901026929}
   m_Layer: 0
   m_Name: Enemy_S1_SniperEyeBullet
   m_TagString: Untagged
@@ -50,6 +51,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: {x: 0, y: 0, z: 0}
+--- !u!114 &792371658901026929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786680677181795969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7308b0d44d8e91c42a4ce4ee9bf1ce3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &344358983760153393
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class System_GameSetup : MonoBehaviour
     // Player spawning related
     public GameObject[] fighters = new GameObject[4];
     public GameObject stardustTurret;
+    public GameObject[] enemySpawner;
     public UI_GamePasue pauseSetter; // Get Pasue controller for disable pasue menu when spawning player object
     Player_UI_HealthBarControl healthBar;
     Player_UI_SkillBarControl skillBar;
@@ -38,6 +39,7 @@ public class System_GameSetup : MonoBehaviour
         StaticGameData.pasueSetter = pauseSetter;
 
         // Load stage spawner for respawning player
+        Instantiate(enemySpawner[StaticGameData.stage]);
         spawners = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Enemy_Spawner_SpawnerManager>();
 
         // Start the initial spawn

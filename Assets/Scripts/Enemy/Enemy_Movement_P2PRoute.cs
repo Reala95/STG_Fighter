@@ -16,10 +16,13 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
     public Vector3[] movePointList; // List of destination points 
     public float[] waitTimeList; // List of time need to wait on destination
     public float[] linearVelocityList; // List of linear velocity of the gameObject when move to destination
+    public int specialRouteType;
     public bool rotateWhileWaiting; // Bool to set the gameObecjt will rotate toward to next destination while in waiting
     public bool rotateBeforeMoving; // Bool to set the gameObject to instantly rotate toward to next destination when they start to move
     public bool isLooping; // Bool to set the gameObject will destroyed or head back to the first destination
+    public bool hasSpecialRoute; // Bool to start runing special route, can't set to true will the route is in looping;
 
+    Enemy_Movement_SpecialRoute specialRouteData;
     int curRoute = 0;
     int totalRoute;
     Vector3 curPos;
@@ -29,6 +32,7 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
     float curWaitTime = 0;
     bool onMove = true;
     bool onWait = false;
+    bool onSpecialRoute = false;
     
 
     // Start is called before the first frame update
@@ -36,12 +40,17 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
     {
         transform.position = initPos;
         curPos = initPos;
-        if(rotateBeforeMoving || rotateWhileWaiting)
+        totalRoute = movePointList.Length;
+        if (rotateBeforeMoving || rotateWhileWaiting)
         {
             Quaternion q = Quaternion.AngleAxis(getRotateAngle(movePointList[curRoute]) + 90, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, 1);
         }
-        totalRoute = movePointList.Length;
+        if (hasSpecialRoute)
+        {
+            specialRouteData = GetComponent<Enemy_Movement_SpecialRoute>();
+            specialRouteData.routeType = specialRouteType;
+        }
         if(waitTimeList.Length != totalRoute || linearVelocityList.Length != totalRoute)
         {
             Debug.LogError(gameObject.name + ": route number not match, this gameObject has been deleted.");
@@ -92,14 +101,22 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
             {
                 onMove = true;
                 onWait = false;
+                curMoveTime = 0;
                 if (rotateBeforeMoving)
                 {
                     transform.rotation = Quaternion.Slerp(curRot, targetRot, 1);
                 }
-                curMoveTime = 0;
                 if (!isLooping && curRoute + 1 == totalRoute)
                 {
-                    Destroy(gameObject);
+                    if (hasSpecialRoute)
+                    {
+                        onSpecialRoute = true;
+                        onMove = false;
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
                 }
                 curRoute = getNextRouteNumber();
             }
@@ -123,9 +140,11 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
         movePointList = data.movePointList;
         waitTimeList = data.waitTimeList;
         linearVelocityList = data.linearVelocityList;
+        specialRouteType = data.specialRouteType;
         rotateWhileWaiting = data.rotateWhileWaiting;
         rotateBeforeMoving = data.rotateBeforeMoving;
         isLooping = data.isLooping;
+        hasSpecialRoute = data.hasSpecialRoute;
     }
 
     public int getCurRoute()
@@ -141,5 +160,10 @@ public class Enemy_Movement_P2PRoute : MonoBehaviour
     public bool isOnWait()
     {
         return onWait;
+    }
+
+    public bool isOnSpecialRoute()
+    {
+        return onSpecialRoute;
     }
 }
