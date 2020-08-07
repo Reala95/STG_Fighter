@@ -1,0 +1,24 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"firstShotWaitTime": 0.0,
+			"reloadTime": 0.0,
+			"bulletClip": "0",
+			"clipAmount": "0",
+			"fireInterval": 0.5,
+			"isFireAllowed": false
+		},
+
+		{
+		"index": "1",
+			"firstShotWaitTime": 0.0,
+			"reloadTime": 0.0,
+			"bulletClip": "0",
+			"clipAmount": "0",
+			"fireInterval": 0.5,
+			"isFireAllowed": false
+		}
+	]
+}

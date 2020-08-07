@@ -1,0 +1,32 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"routeType": "0",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 10.0,
+			"center": {"x":0.0,"y":0.0,"z":0.0} ,
+			"angleRatio": 0.0,
+			"startAngle": 0.0,
+			"radius": 1.0,
+			"isCounterClockWise": false,
+			"isRotateByCircle": false
+		},
+
+		{
+		"index": "1",
+			"routeType": "0",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 0.0,
+			"center": {"x":0.0,"y":0.0,"z":0.0} ,
+			"angleRatio": 0.0,
+			"startAngle": 0.0,
+			"radius": 1.0,
+			"isCounterClockWise": false,
+			"isRotateByCircle": false
+		}
+	]
+}

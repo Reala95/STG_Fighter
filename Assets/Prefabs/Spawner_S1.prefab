@@ -1,0 +1,508 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5198425122421682398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5198425122421682384}
+  - component: {fileID: 5198425122421682387}
+  - component: {fileID: 5198425122421682385}
+  - component: {fileID: 5198425122421682386}
+  - component: {fileID: 5198425122421682389}
+  - component: {fileID: 5198425122421682388}
+  - component: {fileID: 5198425122421682390}
+  - component: {fileID: 5198425122421682391}
+  - component: {fileID: 5198425122421682377}
+  - component: {fileID: 5198425122421682376}
+  - component: {fileID: 5198425122421682378}
+  - component: {fileID: 5198425122421682379}
+  - component: {fileID: 5198425122421682380}
+  - component: {fileID: 5198425122421682381}
+  - component: {fileID: 5198425122421682382}
+  - component: {fileID: 5198425122421682383}
+  m_Layer: 0
+  m_Name: Spawner_S1
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5198425122421682384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5198425122421682387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f515fdd035853e43b2fd6c68485a456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveOrder: 0600000007000000000000000100000006000000050000000700000004000000020000000a000000000000000100000002000000090000000c000000000000000100000002000000080000000d00000003000000030000000800000003000000090000000700000005000000060000000b0000000a00000000000000010000000000000001000000030000000400000005000000
+  waveInterval:
+  - 3.5
+  - 2
+  - 2
+  - 4
+  - 4
+  - 2
+  - 9
+  - 2
+  - 7
+  - 7
+  - 15
+  - 3
+  - 3
+  - 3
+  - 2
+  - 10
+  - 3
+  - 3
+  - 3
+  - 2
+  - 10
+  - 6
+  - 1
+  - 1
+  - 5
+  - 5
+  - 2
+  - 5
+  - 2
+  - 7
+  - 7
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 5
+  destroyWhenDone: 1
+--- !u!114 &5198425122421682385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 0
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000
+  movementOrder: 00000000070000000300000004000000
+  spMovementOrder: 00000000000000000000000000000000
+  firemodeOrder: 01000000010000000100000001000000
+  spawnInterval:
+  - 0
+  - 0
+  - 6
+  - 0
+--- !u!114 &5198425122421682386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 1
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000
+  movementOrder: 01000000060000000200000005000000
+  spMovementOrder: 00000000000000000000000000000000
+  firemodeOrder: 01000000010000000100000001000000
+  spawnInterval:
+  - 0
+  - 0
+  - 6
+  - 0
+--- !u!114 &5198425122421682389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 2
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000
+  movementOrder: 01000000020000000500000006000000
+  spMovementOrder: 00000000000000000000000000000000
+  firemodeOrder: 01000000010000000100000001000000
+  spawnInterval:
+  - 0
+  - 0
+  - 6
+  - 0
+--- !u!114 &5198425122421682388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 3
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000000000000000000000000000
+  movementOrder: 03000000020000000400000001000000050000000000000006000000
+  spMovementOrder: 00000000000000000000000000000000000000000000000000000000
+  firemodeOrder: 02000000020000000200000002000000020000000200000002000000
+  spawnInterval:
+  - 0
+  - 3
+  - 0
+  - 3
+  - 0
+  - 3
+  - 0
+--- !u!114 &5198425122421682390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 4
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000000000000000000000000000
+  movementOrder: 00000000010000000200000003000000040000000500000006000000
+  spMovementOrder: 00000000000000000000000000000000000000000000000000000000
+  firemodeOrder: 02000000020000000200000002000000020000000200000002000000
+  spawnInterval:
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!114 &5198425122421682391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 5
+  enemyPrefab:
+  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000000000000000000000000000000000000000000000000000
+  movementOrder: 06000000050000000400000003000000020000000100000000000000
+  spMovementOrder: 00000000000000000000000000000000000000000000000000000000
+  firemodeOrder: 02000000020000000200000002000000020000000200000002000000
+  spawnInterval:
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!114 &5198425122421682377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 6
+  enemyPrefab:
+  - {fileID: 4216585964132950636, guid: e7fb5d5e6650f7846a7b576172f1f59e, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: d08b4d4ea3995004b858f9b5e88a9f0a, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  movementOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spMovementOrder: 0100000001000000010000000100000001000000010000000100000001000000
+  firemodeOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spawnInterval:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+--- !u!114 &5198425122421682376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 7
+  enemyPrefab:
+  - {fileID: 4216585964132950636, guid: e7fb5d5e6650f7846a7b576172f1f59e, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: d08b4d4ea3995004b858f9b5e88a9f0a, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  movementOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spMovementOrder: 0200000002000000020000000200000002000000020000000200000002000000
+  firemodeOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spawnInterval:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+--- !u!114 &5198425122421682378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 8
+  enemyPrefab:
+  - {fileID: 4216585964132950636, guid: e7fb5d5e6650f7846a7b576172f1f59e, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: d08b4d4ea3995004b858f9b5e88a9f0a, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  movementOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spMovementOrder: 0300000003000000030000000300000003000000030000000300000003000000
+  firemodeOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spawnInterval:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+--- !u!114 &5198425122421682379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 9
+  enemyPrefab:
+  - {fileID: 4216585964132950636, guid: e7fb5d5e6650f7846a7b576172f1f59e, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: d08b4d4ea3995004b858f9b5e88a9f0a, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  movementOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spMovementOrder: 0400000004000000040000000400000004000000040000000400000004000000
+  firemodeOrder: 0000000000000000000000000000000000000000000000000000000000000000
+  spawnInterval:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+--- !u!114 &5198425122421682380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 10
+  enemyPrefab:
+  - {fileID: 8426789491369228345, guid: 9d665c3c08d43544c9cf20eddf2bd793, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 3f81c95bc71e1594c95f490a7bbb9ed7, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000
+  movementOrder: 00000000
+  spMovementOrder: 00000000
+  firemodeOrder: 03000000
+  spawnInterval:
+  - 0
+--- !u!114 &5198425122421682381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 11
+  enemyPrefab:
+  - {fileID: 8426789491369228345, guid: 9d665c3c08d43544c9cf20eddf2bd793, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 3f81c95bc71e1594c95f490a7bbb9ed7, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000
+  movementOrder: 01000000
+  spMovementOrder: 00000000
+  firemodeOrder: 03000000
+  spawnInterval:
+  - 0
+--- !u!114 &5198425122421682382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 12
+  enemyPrefab:
+  - {fileID: 6647209695756399005, guid: 7cdc3362a9874384393a90b82880cce3, type: 3}
+  - {fileID: 8426789491369228345, guid: 9d665c3c08d43544c9cf20eddf2bd793, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 3f81c95bc71e1594c95f490a7bbb9ed7, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0100000000000000
+  movementOrder: 0200000003000000
+  spMovementOrder: 0000000000000000
+  firemodeOrder: 0300000003000000
+  spawnInterval:
+  - 0
+  - 0
+--- !u!114 &5198425122421682383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 13
+  enemyPrefab:
+  - {fileID: 6647209695756399005, guid: 7cdc3362a9874384393a90b82880cce3, type: 3}
+  - {fileID: 8426789491369228345, guid: 9d665c3c08d43544c9cf20eddf2bd793, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 3f81c95bc71e1594c95f490a7bbb9ed7, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 0000000001000000
+  movementOrder: 0200000003000000
+  spMovementOrder: 0000000000000000
+  firemodeOrder: 0300000003000000
+  spawnInterval:
+  - 0
+  - 0

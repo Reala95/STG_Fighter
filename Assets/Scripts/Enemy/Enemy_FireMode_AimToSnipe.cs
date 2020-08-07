@@ -31,7 +31,6 @@ public class Enemy_FireMode_AimToSnipe : MonoBehaviour
     void Start()
     {
         curReloadTime = firstShotWaitTime;
-        Debug.Log(curReloadTime);
         isReloading = true;
     }
 

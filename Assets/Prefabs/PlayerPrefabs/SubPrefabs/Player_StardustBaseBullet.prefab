@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac009b7188332504fa7db0120b4ff91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk: 2
+  atk: 5
   target: 0
   linearVelocity: 12
   shootDegree: 90

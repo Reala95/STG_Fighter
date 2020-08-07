@@ -1,0 +1,74 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"routeType": "0",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 0.0,
+			"center": {"x":0.0,"y":0.0,"z":0.0} ,
+			"angleRatio": 0.0,
+			"startAngle": 0.0,
+			"radius": 1.0,
+			"isCounterClockWise": false,
+			"isRotateByCircle": false
+		},
+
+		{
+		"index": "1",
+			"routeType": "4",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 5.0,
+			"center": {"x":-9.0,"y":0.0,"z":0.0} ,
+			"angleRatio": 1.0,
+			"startAngle": 45.0,
+			"radius": 8.0,
+			"isCounterClockWise": false,
+			"isRotateByCircle": true
+		},
+
+		{
+		"index": "2",
+			"routeType": "4",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 5.0,
+			"center": {"x":9.0,"y":0.0,"z":0.0} ,
+			"angleRatio": 1.0,
+			"startAngle": 135.0,
+			"radius": 8.0,
+			"isCounterClockWise": true,
+			"isRotateByCircle": true
+		},
+
+		{
+		"index": "3",
+			"routeType": "4",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 2.5,
+			"center": {"x":0.0,"y":5.5,"z":0.0} ,
+			"angleRatio": 1.0,
+			"startAngle": 0.0,
+			"radius": 6.0,
+			"isCounterClockWise": false,
+			"isRotateByCircle": true
+		},
+
+		{
+		"index": "4",
+			"routeType": "4",
+			"velocity": 0.0,
+			"curve": 0.0,
+			"moveTime": 2.5,
+			"center": {"x":0.0,"y":5.5,"z":0.0} ,
+			"angleRatio": 1.0,
+			"startAngle": 180.0,
+			"radius": 6.0,
+			"isCounterClockWise": true,
+			"isRotateByCircle": true
+		}
+	]
+}

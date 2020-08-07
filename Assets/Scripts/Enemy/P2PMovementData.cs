@@ -10,7 +10,6 @@ public class P2PMovementData
     public Vector3[] movePointList;
     public float[] waitTimeList;
     public float[] linearVelocityList;
-    public int specialRouteType;
     public bool rotateWhileWaiting;
     public bool rotateBeforeMoving;
     public bool isLooping;

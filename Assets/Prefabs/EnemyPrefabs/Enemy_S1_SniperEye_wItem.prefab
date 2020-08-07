@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 8799901000359228263}
   - component: {fileID: 1055328653559970136}
   - component: {fileID: 3069412802904407953}
+  - component: {fileID: -5898500480549003242}
   - component: {fileID: 3321539739078129449}
   - component: {fileID: 3466328786657785231}
   m_Layer: 0
@@ -253,11 +254,32 @@ MonoBehaviour:
   movePointList: []
   waitTimeList: []
   linearVelocityList: []
-  specialRouteType: 0
   rotateWhileWaiting: 0
   rotateBeforeMoving: 0
   isLooping: 0
   hasSpecialRoute: 0
+--- !u!114 &-5898500480549003242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426789491369228345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb49818d0fdcea4792f7fd274ee45ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routeType: 0
+  velocity: 0
+  curve: 0
+  moveTime: 0
+  center: {x: 0, y: 0, z: 0}
+  angleRatio: 0
+  startAngle: 0
+  radius: 0
+  isCounterClockWise: 0
+  isRotateByCircle: 0
 --- !u!114 &3321539739078129449
 MonoBehaviour:
   m_ObjectHideFlags: 0

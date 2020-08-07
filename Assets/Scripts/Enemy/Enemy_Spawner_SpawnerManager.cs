@@ -17,7 +17,7 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
     int curWave = 0;
     float curInterval = 0;
     bool waveInopt = false;
-    public bool isPaused = false;
+    bool isPaused = false;
     
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Enemy_Spawner_SpawnerManager : MonoBehaviour
         spawnWaves = GetComponents<Enemy_Spawner_SpawnWave>();
         foreach(Enemy_Spawner_SpawnWave w in spawnWaves)
         {
-            if (w.isThisWaveInOpt)
+            if (w.checkInOpt())
             {
                 Debug.LogError(gameObject.name + ": wave No." + w.waveNum + " unexpected in opt, this gameObject is deleted");
                 Destroy(gameObject);

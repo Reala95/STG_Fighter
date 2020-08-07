@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 962317442953468478}
   - component: {fileID: 5951429783637586378}
   - component: {fileID: 8381239061972002459}
+  - component: {fileID: -4778856053642290652}
   - component: {fileID: 418293180793178556}
   m_Layer: 0
   m_Name: Enemy_S1_SniperEye
@@ -157,11 +158,32 @@ MonoBehaviour:
   movePointList: []
   waitTimeList: []
   linearVelocityList: []
-  specialRouteType: 0
   rotateWhileWaiting: 0
   rotateBeforeMoving: 0
   isLooping: 0
   hasSpecialRoute: 0
+--- !u!114 &-4778856053642290652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647209695756399005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb49818d0fdcea4792f7fd274ee45ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  routeType: 0
+  velocity: 0
+  curve: 0
+  moveTime: 0
+  center: {x: 0, y: 0, z: 0}
+  angleRatio: 0
+  startAngle: 0
+  radius: 0
+  isCounterClockWise: 0
+  isRotateByCircle: 0
 --- !u!114 &418293180793178556
 MonoBehaviour:
   m_ObjectHideFlags: 0

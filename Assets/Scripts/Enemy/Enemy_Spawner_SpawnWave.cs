@@ -13,26 +13,30 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
 {
     public int waveNum; // This number is only used to determine the waves in editor
     public GameObject[] enemyPrefab; // List of enemy will show up in this wave
-    public TextAsset MovementDataJson; // Json file that use to setup enemy's run route
+    public TextAsset P2PMovementDataJson; // Json file that use to setup enemy's run route
+    public TextAsset SpecialMovementDataJson; // Json file that use to setup enemy's special route
     public TextAsset FireModeDataJson; // Json file that use to setup enemy's firemode
-    P2PMovementDataList movementData;
+    P2PMovementDataList p2pMovementData;
+    SpecialMovementDataList spMovementData;
     FireModeDataList firemodeData;
     public int[] spawnOrder; // Enemy spawn order, this array's elements are the index number of enemyPrefab array
-    public int[] movementOrder; // Enemy movement route order, this array's elements are the index number of movementData.list
+    public int[] movementOrder; // Enemy movement route order, this array's elements are the index number of p2pMovementData.list
+    public int[] spMovementOrder; // Enemy special route order, this array's elements are the index number of spMovementData.lst
     public int[] firemodeOrder; // Enemy firemode order, this array's elements are the index number of firemodeData.list
     public float[] spawnInterval; // Wait time before the enemy spawn
-    public bool isThisWaveInOpt; // Bool to enable/disable this wave
 
     int totalSpawnNum;
     int curIndex = 0;
     float curInterval = 0;
-    bool hasMainSpawner;
+    bool hasMainSpawner = false;
     bool isPaused = false;
+    bool isThisWaveInOpt = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        movementData = JsonUtility.FromJson<P2PMovementDataList>(MovementDataJson.text);
+        p2pMovementData = JsonUtility.FromJson<P2PMovementDataList>(P2PMovementDataJson.text);
+        spMovementData = JsonUtility.FromJson<SpecialMovementDataList>(SpecialMovementDataJson.text);
         firemodeData = JsonUtility.FromJson<FireModeDataList>(FireModeDataJson.text);
         totalSpawnNum = spawnOrder.Length;
         if (spawnInterval.Length != totalSpawnNum)
@@ -41,6 +45,7 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
             Destroy(gameObject);
         }
         hasMainSpawner = GetComponents<Enemy_Spawner_SpawnerManager>().Length != 0;
+        isThisWaveInOpt = !hasMainSpawner;
     }
 
     // Update is called once per frame
@@ -81,7 +86,8 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
     private void spawn()
     {
         GameObject enemyUnit = enemyPrefab[spawnOrder[curIndex]];
-        enemyUnit.GetComponent<Enemy_Movement_P2PRoute>().setUpByJson(movementData.list[movementOrder[curIndex]]);
+        enemyUnit.GetComponent<Enemy_Movement_P2PRoute>().setUpByJson(p2pMovementData.list[movementOrder[curIndex]]);
+        enemyUnit.GetComponent<Enemy_Movement_SpecialRoute>().setByJson(spMovementData.list[spMovementOrder[curIndex]]);
         if(enemyUnit.GetComponent<Enemy_FireMode_FireOnP2PRoute>() != null)
         {
             enemyUnit.GetComponent<Enemy_FireMode_FireOnP2PRoute>().setByJson(firemodeData.list[firemodeOrder[curIndex]]);
@@ -96,6 +102,11 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
     private int toNextIndex()
     {
         return (curIndex + 1) % totalSpawnNum;
+    }
+
+    public bool checkInOpt()
+    {
+        return isThisWaveInOpt;
     }
 
     public void turnOn()

@@ -44,7 +44,7 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         GameObject hitTarget = collision.gameObject;
         if(hitTarget.tag == "Enemy")

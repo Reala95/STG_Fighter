@@ -4753,7 +4753,7 @@ Canvas:
   m_GameObject: {fileID: 1965929086}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -4773,8 +4773,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965929086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.028011205, y: 0.028011205, z: 0.028011205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 595340120}
   - {fileID: 305039587}
@@ -4786,8 +4786,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 660, y: 357}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1965929091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4823,7 +4823,7 @@ MonoBehaviour:
   stardustTurret: {fileID: 6424848789177962912, guid: ca85fb131d6ce2a439779ffe9b46b1a6,
     type: 3}
   enemySpawner:
-  - {fileID: 3332754736750110550, guid: c49937e4e185db7488093c99cf75f5df, type: 3}
+  - {fileID: 5198425122421682398, guid: cb7b7f6dbb4264e4d8f9ae5bc296572d, type: 3}
   pauseSetter: {fileID: 1965929091}
   winMenu: {fileID: 1731775929}
   lostMenu: {fileID: 57526014}

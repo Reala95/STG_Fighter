@@ -29,9 +29,9 @@ snipe lv.3 dmg: (1 + 10) x 5 = 55 (dps: 550 / total: 2200)
 
 Stardust (hp:60)
 weapon cd: 0.2 (5 hit/s)
-lv.1 dmg: 2 x 1 (dps: 10)
-lv.2 dmg: 2 x 2 (dps: 20)
-lv.3 dmg: 2 x 3 (dps: 30)
+lv.1 dmg: 5 x 1 (dps: 25)
+lv.2 dmg: 5 x 2 (dps: 50)
+lv.3 dmg: 5 x 3 (dps: 75)
 
 turret cd: 2 (0.5 hit/s)
 turret lv.1 dmg: 10 x 2 (dps: 10)

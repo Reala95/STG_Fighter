@@ -1,0 +1,100 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"initPos": {"x":-6.0,"y":5.5,"z":0.0},
+			"movePointList":[
+				{"x":-6.0,"y":3.0,"z":0.0},
+				{"x":0.0,"y":3.0,"z":0.0},
+				{"x":6.0,"y":3.0,"z":0.0},
+				{"x":0.0,"y":3.0,"z":0.0}
+			],
+			"waitTimeList":[
+				5.0,
+				0.0,
+				5.0,
+				0.0
+			],
+			"linearVelocityList":[
+				3.0,
+				3.0,
+				3.0,
+				3.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":true,
+			"hasSpecialRoute":false
+		},
+
+		{
+		"index": "1",
+			"initPos": {"x":6.0,"y":5.5,"z":0.0},
+			"movePointList":[
+				{"x":6.0,"y":3.0,"z":0.0},
+				{"x":0.0,"y":3.0,"z":0.0},
+				{"x":-6.0,"y":3.0,"z":0.0},
+				{"x":0.0,"y":3.0,"z":0.0}
+			],
+			"waitTimeList":[
+				5.0,
+				0.0,
+				5.0,
+				0.0
+			],
+			"linearVelocityList":[
+				3.0,
+				3.0,
+				3.0,
+				3.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":true,
+			"hasSpecialRoute":false
+		},
+
+		{
+		"index": "2",
+			"initPos": {"x":4.0,"y":5.5,"z":0.0},
+			"movePointList":[
+				{"x":4.0,"y":3.0,"z":0.0},
+				{"x":4.0,"y":-5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				20.0,
+				0.0
+			],
+			"linearVelocityList":[
+				1.0,
+				1.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":false,
+			"hasSpecialRoute":false
+		},
+
+		{
+		"index": "3",
+			"initPos": {"x":-4.0,"y":5.5,"z":0.0},
+			"movePointList":[
+				{"x":-4.0,"y":3.0,"z":0.0},
+				{"x":-4.0,"y":-5.5,"z":0.0}
+			],
+			"waitTimeList":[
+				20.0,
+				0.0
+			],
+			"linearVelocityList":[
+				1.0,
+				1.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":false,
+			"hasSpecialRoute":false
+		}
+	]
+}
