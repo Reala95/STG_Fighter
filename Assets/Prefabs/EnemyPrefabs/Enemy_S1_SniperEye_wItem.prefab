@@ -238,6 +238,8 @@ MonoBehaviour:
   crashDamage: 50
   crashDefence: 10
   crashalbeTarget: 1
+  hitSoundName: HitFlesh
+  killedSoundName: KillFlesh
 --- !u!114 &3069412802904407953
 MonoBehaviour:
   m_ObjectHideFlags: 0

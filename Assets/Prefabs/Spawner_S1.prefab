@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 5198425122421682381}
   - component: {fileID: 5198425122421682382}
   - component: {fileID: 5198425122421682383}
+  - component: {fileID: -5023512476417522831}
   m_Layer: 0
   m_Name: Spawner_S1
   m_TagString: Spawner
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f515fdd035853e43b2fd6c68485a456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveOrder: 0600000007000000000000000100000006000000050000000700000004000000020000000a000000000000000100000002000000090000000c000000000000000100000002000000080000000d00000003000000030000000800000003000000090000000700000005000000060000000b0000000a00000000000000010000000000000001000000030000000400000005000000
+  waveOrder: 06000000070000000000000001000000070000000500000003000000060000000a00000006000000070000000300000007000000060000000100000000000000060000000400000003000000070000000b000000070000000600000003000000080000000900000005000000040000000d000000000000000100000004000000090000000800000004000000050000000c000000000000000100000004000000020000000300000006000000070000000400000006000000070000000500000007000000060000000e000000
   waveInterval:
   - 3.5
   - 2
@@ -65,37 +66,51 @@ MonoBehaviour:
   - 4
   - 4
   - 2
-  - 9
   - 2
   - 7
+  - 2
+  - 8
+  - 2
+  - 2
   - 7
-  - 15
-  - 3
-  - 3
-  - 3
   - 2
-  - 10
-  - 3
-  - 3
-  - 3
   - 2
-  - 10
+  - 4
+  - 4
+  - 2
+  - 2
+  - 7
+  - 2
+  - 8
+  - 2
+  - 2
+  - 7
+  - 2
+  - 2
   - 6
-  - 1
-  - 1
-  - 5
-  - 5
+  - 6
+  - 8
+  - 6
+  - 6
+  - 6
   - 2
-  - 5
   - 2
-  - 7
-  - 7
+  - 6
+  - 6
+  - 8
+  - 6
+  - 6
+  - 6
   - 4
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   - 4
-  - 4
-  - 4
-  - 5
-  - 5
   destroyWhenDone: 1
 --- !u!114 &5198425122421682385
 MonoBehaviour:
@@ -111,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 0
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -125,6 +140,7 @@ MonoBehaviour:
   - 0
   - 6
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 1
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -153,6 +169,7 @@ MonoBehaviour:
   - 0
   - 6
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 2
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: ebf259e413436934f893d0a576b1b5eb, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -181,6 +198,7 @@ MonoBehaviour:
   - 0
   - 6
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 3
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -212,6 +230,7 @@ MonoBehaviour:
   - 0
   - 3
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 4
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -243,6 +262,7 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  isLooping: 0
 --- !u!114 &5198425122421682391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNum: 5
   enemyPrefab:
-  - {fileID: 6962846786865796218, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
+  - {fileID: 1224483024789933391, guid: 364a1405baa3b4f4bbaa7249dda16f94, type: 3}
   P2PMovementDataJson: {fileID: 4900000, guid: 954e549c4bce08148a627dc0a473d345, type: 3}
   SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
     type: 3}
@@ -274,6 +294,7 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  isLooping: 0
 --- !u!114 &5198425122421682377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +327,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
+  isLooping: 0
 --- !u!114 &5198425122421682376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +360,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
+  isLooping: 0
 --- !u!114 &5198425122421682378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +393,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
+  isLooping: 0
 --- !u!114 &5198425122421682379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +426,7 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
+  isLooping: 0
 --- !u!114 &5198425122421682380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +452,7 @@ MonoBehaviour:
   firemodeOrder: 03000000
   spawnInterval:
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +478,7 @@ MonoBehaviour:
   firemodeOrder: 03000000
   spawnInterval:
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +506,7 @@ MonoBehaviour:
   spawnInterval:
   - 0
   - 0
+  isLooping: 0
 --- !u!114 &5198425122421682383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,3 +534,30 @@ MonoBehaviour:
   spawnInterval:
   - 0
   - 0
+  isLooping: 0
+--- !u!114 &-5023512476417522831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198425122421682398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 14
+  enemyPrefab:
+  - {fileID: 7727422240463668082, guid: 74e6e64d5a8f09e44b5dd13bc54cbfa7, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 63509abdda5e5174fb7daafb8ef2a898, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000
+  movementOrder: 00000000
+  spMovementOrder: 00000000
+  firemodeOrder: 00000000
+  spawnInterval:
+  - 0
+  isLooping: 0

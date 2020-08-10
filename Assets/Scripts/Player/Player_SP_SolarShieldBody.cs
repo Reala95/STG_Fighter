@@ -13,6 +13,9 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
     GameObject solarFighter;
     Common_HP solarFighterHP;
     float curShieldHealCD;
+
+    public string audioSourceName;
+    AudioSource reflectionSound;
     
 
     // Start is called before the first frame update
@@ -22,6 +25,8 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
         Physics2D.IgnoreCollision(solarFighter.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         solarFighterHP = solarFighter.GetComponent<Common_HP>();
         curShieldHealCD = shieldHealCD;
+
+        reflectionSound = GameObject.Find(audioSourceName).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,11 +59,12 @@ public class Player_SP_SolarShieldBody : MonoBehaviour
         else if(hitTarget.tag == "Bullet/Enemy")
         {
             returnBullet.GetComponent<SpriteRenderer>().sprite = hitTarget.GetComponent<SpriteRenderer>().sprite;
-            returnBullet.GetComponent<Common_Bullet>().presetVelocity = hitTarget.GetComponent<Rigidbody2D>().velocity * -1;
-            returnBullet.GetComponent<Common_Bullet>().atk = hitTarget.GetComponent<Common_Bullet>().atk;
+            returnBullet.GetComponent<Common_Bullet>().presetVelocity = hitTarget.GetComponent<Rigidbody2D>().velocity * -2;
+            returnBullet.GetComponent<Common_Bullet>().atk = hitTarget.GetComponent<Common_Bullet>().atk * 3;
             returnBullet.GetComponent<BoxCollider2D>().size = hitTarget.GetComponent<BoxCollider2D>().size;
             Instantiate(returnBullet, hitTarget.transform.position, Quaternion.Inverse(hitTarget.transform.rotation));
             Destroy(hitTarget);
+            reflectionSound.Play();
         }
     }
 }

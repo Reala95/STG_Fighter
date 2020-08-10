@@ -2,17 +2,23 @@
 Wave0: 4 horizon /L1R4 - L3R2
 wave1: 4 horizon /L4R1 - L2R3
 wave2: 4 horizon /up to down
+
 wave3: 7 vertical /mid to out
 wave4: 7 vertical / L to R
 wave5: 7 vertical / R to L
+
 wave6: eye rush / Left roll
 wave7: eye rush / Right roll
+
 wave8: eye rush / Mid roll - R to L
 wave9: eye rush / Mid roll - L to R
+
 wave10: eye sniper / L
 wave11: eye sniper / R
 wave12: 2 eye sniper / Item in R
 wave13: 2 eye sniper / Item in L
+
+wave14: Boss
 
 Spawner Set:
 
@@ -22,45 +28,61 @@ Spawner Set:
 0  4
 1  4
 
-6  2
-5  9
 7  2
-4  7
+5  2
+3  7
+6  2
 
-2  7
-10 15
-0 3
-1 3
+10 8
+6  2
+7  2
+3  7
 
-2 3
-9 2
-12 10
-0 3
+7  2
+6  2
+1  4
+0  4
 
-1 3
-2 3
-8 2
-13 10
+6  2
+4  2
+3  7
+7  2
 
-3 6
-8 1
-3 1
-9 5
+11 8
+7  2
+6  2
+3  7
 
-4 5
-7 2
-5 5
-6 2
+8  2
+9  2
+5  6
+4  6
 
-11 7
-10 7
-0 4
-1 4
+13 8
+0  6
+1  6
+4  6
 
-0 4
-1 4
-3 5
-4 5
-5
+9  2
+8  2
+4  6
+5  6
 
+12 8
+0  6
+1  6
+4  6
 
+2  4
+3  2
+6  2
+7  2
+
+4  2
+6  2
+7  2
+5  2
+
+7  2
+6  4
+14 

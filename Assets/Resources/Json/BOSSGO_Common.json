@@ -1,0 +1,46 @@
+{
+	"list":
+	[
+		{
+		"index": "0",
+			"initPos": {"x":0.0,"y":0.0,"z":0.0},
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":0.0,"y":0.0,"z":0.0}
+			],
+			"waitTimeList":[
+				300.0,
+				300.0
+			],
+			"linearVelocityList":[
+				1.0,
+				1.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":false,
+			"hasSpecialRoute":false
+		},
+
+		{
+		"index": "1",
+			"initPos": {"x":0.0,"y":0.0,"z":0.0},
+			"movePointList":[
+				{"x":0.0,"y":0.0,"z":0.0},
+				{"x":0.0,"y":0.0,"z":0.0}
+			],
+			"waitTimeList":[
+				0.0,
+				0.0
+			],
+			"linearVelocityList":[
+				1.0,
+				1.0
+			],
+			"rotateWhileWaiting":false,
+			"rotateBeforeMoving":false,
+			"isLooping":false,
+			"hasSpecialRoute":false
+		}
+	]
+}

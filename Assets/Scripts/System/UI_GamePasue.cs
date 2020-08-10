@@ -8,21 +8,28 @@ public class UI_GamePasue : MonoBehaviour
     public GameObject pasueMenu;
     public bool isPaused;
     public bool isAvaliable;
+
+    public string openSEName;
+    AudioSource openSE;
+    public string closeSEName;
+    AudioSource closeSE;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        openSE = GameObject.Find(openSEName).GetComponent<AudioSource>();
+        closeSE = GameObject.Find(closeSEName).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && isAvaliable)
+        if ((Input.GetKeyDown(KeyCode.C) || Input.GetMouseButtonDown(1)) && isAvaliable)
         {
             isPaused = !isPaused;
             if (isPaused)
             {
+                openSE.Play();
                 Time.timeScale = 0.0f;
                 pasueMenu.SetActive(true);
                 Cursor.visible = true;
@@ -30,6 +37,7 @@ public class UI_GamePasue : MonoBehaviour
             }
             else
             {
+                closeSE.Play();
                 Time.timeScale = 1.0f;
                 pasueMenu.SetActive(false);
                 Cursor.visible = false;

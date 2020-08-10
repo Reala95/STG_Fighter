@@ -90,6 +90,7 @@ MonoBehaviour:
   shieldDamage: 5
   shieldHealAmount: 1
   shieldHealCD: 0.2
+  audioSourceName: SolarShieldReflection
 --- !u!114 &8632982474934374578
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -143,6 +143,8 @@ MonoBehaviour:
   crashDamage: 10
   crashDefence: 5
   crashalbeTarget: 0
+  hitSoundName: HitMetal
+  killedSoundName: KillMetal
 --- !u!114 &1046242658137810994
 MonoBehaviour:
   m_ObjectHideFlags: 0

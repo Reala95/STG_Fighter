@@ -19,6 +19,8 @@ TagManager:
   - bgmPlayer/Boss
   - GameManager
   - SoundManager
+  - BOSS
+  - Hint
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,7 @@ public class Common_Bullet : MonoBehaviour
     void Update()
     {
         Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (screenPos.x < -10 || screenPos.y < -10 || screenPos.x > Screen.width + 20 || screenPos.y > Screen.height + 20)
+        if (screenPos.x < 0 || screenPos.y < 0 || screenPos.x > Screen.width|| screenPos.y > Screen.height)
         {
             Destroy(gameObject);
         }

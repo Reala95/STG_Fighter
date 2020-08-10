@@ -13,12 +13,17 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
     bool isSoundPlayed = false;
     bool isActivated = false;
 
+    AudioSource spReadySound;
+    AudioSource spActiveSound;
+
     // Public bool for other UI related script accessing
     public bool isSPAllowed;
 
     // Start is called before the first frame update
     void Start()
     {
+        spReadySound = GameObject.Find("SkillReady").GetComponent<AudioSource>();
+        spActiveSound = GameObject.Find("SkillActive").GetComponent<AudioSource>();
         curCD = 0;
     }
 
@@ -33,14 +38,17 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
                 if (curCD >= cd)
                 {
                     isReady = true;
+                    isSoundPlayed = false;
                 }
             }
             if(isReady && !isSoundPlayed)
             {
+                spReadySound.Play();
                 isSoundPlayed = true;
             }
-            else if (isReady && Input.GetKey(KeyCode.Space))
+            else if (isReady && (Input.GetKey(KeyCode.Space) || (Input.GetMouseButtonDown(0))))
             {
+                spActiveSound.Play();
                 isReady = false;
                 isActivated = true;
                 curCD = 0;

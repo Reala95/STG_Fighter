@@ -24,6 +24,7 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
     public int[] spMovementOrder; // Enemy special route order, this array's elements are the index number of spMovementData.lst
     public int[] firemodeOrder; // Enemy firemode order, this array's elements are the index number of firemodeData.list
     public float[] spawnInterval; // Wait time before the enemy spawn
+    public bool isLooping; // Loop back to beginning when there is no main spawner
 
     int totalSpawnNum;
     int curIndex = 0;
@@ -68,6 +69,10 @@ public class Enemy_Spawner_SpawnWave : MonoBehaviour
                     {
                         turnOff();
                         GetComponent<Enemy_Spawner_SpawnerManager>().goToNextWave();
+                    }
+                    else if (isLooping)
+                    {
+                        turnOn();
                     }
                     else
                     {

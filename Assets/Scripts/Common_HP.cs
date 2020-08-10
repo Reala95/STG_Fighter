@@ -23,6 +23,12 @@ public class Common_HP : MonoBehaviour
     // String array for checking target tag
     string[] targetList = { "Enemy", "Player" };
 
+    // SE related
+    public string hitSoundName;
+    AudioSource hitSound;
+    public string killedSoundName;
+    AudioSource killedSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,9 @@ public class Common_HP : MonoBehaviour
         {
             itemDrop = GetComponent<Enemy_DropItemWhenDie>();
         }
+
+        hitSound = GameObject.Find(hitSoundName).GetComponent<AudioSource>();
+        killedSound = GameObject.Find(killedSoundName).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,9 +72,21 @@ public class Common_HP : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (killedSound != null && currentHP == 0)
+        {
+            killedSound.Play();
+        }
+    }
+
     public void damage(int hit)
     {
         currentHP = Math.Max(0, currentHP - hit);
+        if(hitSound != null)
+        {
+            hitSound.Play();
+        }
     }
 
     public void crash(int hit)

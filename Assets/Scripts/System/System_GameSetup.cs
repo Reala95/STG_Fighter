@@ -17,6 +17,7 @@ public class System_GameSetup : MonoBehaviour
 
     // Boss fight related
     public GameObject winMenu;
+    bool isBossDead = false;
 
     // Player respaning related
     Enemy_Spawner_SpawnerManager spawners;
@@ -65,7 +66,15 @@ public class System_GameSetup : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameObject.FindGameObjectsWithTag("Player").Length == 0 && !reseting)
+        if (isBossDead)
+        {
+            Player_MovemovementControl player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_MovemovementControl>();
+            player.setBossDead(isBossDead);
+            player.isAllowMoving = false;
+            isBossDead = false;
+            
+        }
+        else if (GameObject.FindGameObjectsWithTag("Player").Length == 0 && !reseting)
         {
             life--;
             curResetTime = 0;
@@ -107,5 +116,10 @@ public class System_GameSetup : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         healthBar.setPlayer(player);
         skillBar.setPlayer(player);
+    }
+
+    public void setBossDead(bool isBossDead)
+    {
+        this.isBossDead = isBossDead;
     }
 }
