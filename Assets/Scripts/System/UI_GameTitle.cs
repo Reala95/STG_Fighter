@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class UI_GameTitle : MonoBehaviour
 {
     public GameObject[] playerSample;
+    public GameObject fadingScreenGO;
+    public AudioSource titleBGM;
+    public UI_ScreenFading fadingScreen;
     Image[] playerSampleImg;
     int curSelection;
+    bool bgmFading = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +25,6 @@ public class UI_GameTitle : MonoBehaviour
             playerSampleImg[i].color = Color.gray;
         }
         playerSampleImg[curSelection].color = Color.white;
-
     }
 
     // Update is called once per frame
@@ -32,13 +35,18 @@ public class UI_GameTitle : MonoBehaviour
             playerSampleImg[curSelection].color = Color.gray;
             playerSampleImg[StaticGameData.selection].color = Color.white;
             curSelection = StaticGameData.selection;
-
+        }
+        if (bgmFading)
+        {
+            titleBGM.volume = Mathf.Max(0, (titleBGM.volume - Time.deltaTime));
         }
     }
 
     public void startGame()
     {
-        SceneManager.LoadScene(StaticGameData.scenesName_Game);
+        bgmFading = true;
+        fadingScreenGO.SetActive(true);
+        fadingScreen.changeScene(StaticGameData.scenesName_Game);
     }
 
     public void quitGame()

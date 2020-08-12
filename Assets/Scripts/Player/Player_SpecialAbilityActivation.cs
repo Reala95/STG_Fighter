@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_SpecialAbilityActivation : MonoBehaviour
 // Script for player objects to setup basic skill count down and duration count down
 {
+    
     public float cd;
     float curCD = 0;
     public float duration;
@@ -16,12 +17,15 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
     AudioSource spReadySound;
     AudioSource spActiveSound;
 
+    UI_GamePasue pasueMenu;
+
     // Public bool for other UI related script accessing
     public bool isSPAllowed;
 
     // Start is called before the first frame update
     void Start()
     {
+        pasueMenu = StaticGameData.pasueSetter;
         spReadySound = GameObject.Find("SkillReady").GetComponent<AudioSource>();
         spActiveSound = GameObject.Find("SkillActive").GetComponent<AudioSource>();
         curCD = 0;
@@ -30,7 +34,7 @@ public class Player_SpecialAbilityActivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSPAllowed)
+        if (isSPAllowed && !pasueMenu.isPaused)
         {
             if (!isActivated && !isReady)
             {

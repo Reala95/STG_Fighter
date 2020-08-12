@@ -1,0 +1,25 @@
+
+A-3458 "Solar"
+Type: Defence and Survival
+
+Special Ability - Solar Shield:
+Deploy an energy shield to reflect enemy's attack and restore HP.
+;
+F-3456 "Vortex"
+Type: Attack Speed and DPS
+
+Special Ability - Vortex Blast:
+Fire a powerful energy blast in a short amount of time.
+;
+NE-3457 "Nebula"
+Type: Special Bullet and Fast Charge Ability 
+(Gain HP draining when reach Lv.3 Weapon)
+
+Special Ability - Nebula Snipe:
+Generate high damge bullet when each time dealing damage with normal attack.
+;
+SP-3459 "Stardust"
+Type: Auto-Attack Wingman
+
+Special Ability - Star Overload:
+Increase the attack speed of wingman in a short amount of time.

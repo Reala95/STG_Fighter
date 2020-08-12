@@ -33,7 +33,9 @@ public class Player_MovemovementControl : MonoBehaviour
 
     // Boss Fighter Related
     GameObject winMenu = StaticGameData.winMenu;
+    float endingVelocity = 1.0f;
     bool isBossDead = false;
+    bool endAnimation = false;
     bool win = false;
 
     // Start is called before the first frame update
@@ -58,8 +60,6 @@ public class Player_MovemovementControl : MonoBehaviour
         pasueMenu.isAvaliable = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        // 
     }
 
     // Update is called once per frame
@@ -93,15 +93,26 @@ public class Player_MovemovementControl : MonoBehaviour
         }
         else if (isBossDead)
         {
-            player.AddForce(new Vector2(0, 5));
-            if(transform.position.y >= 6)
+            Debug.Log(isBossDead);
+            player.velocity = new Vector2(0, endingVelocity);
+            playerWeapon.isFireAllowed = false;
+            playerSP.isSPAllowed = false;
+            isBossDead = false;
+            endAnimation = true;
+            
+        }
+        else if (endAnimation)
+        {
+            endingVelocity += Time.fixedDeltaTime;
+            player.velocity = new Vector2(0, endingVelocity);
+            if (transform.position.y >= 6)
             {
                 pasueMenu.isAvaliable = false;
                 winMenu.SetActive(true);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 player.velocity = Vector2.zero;
-                isBossDead = false;
+                endAnimation = false;
                 win = true;
             }
         }

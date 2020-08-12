@@ -10,6 +10,7 @@ public class System_GameSetup : MonoBehaviour
     public GameObject[] fighters = new GameObject[4];
     public GameObject stardustTurret;
     public GameObject[] enemySpawner;
+    public GameObject[] background;
     public UI_GamePasue pauseSetter; // Get Pasue controller for disable pasue menu when spawning player object
     Player_UI_HealthBarControl healthBar;
     Player_UI_SkillBarControl skillBar;
@@ -41,6 +42,7 @@ public class System_GameSetup : MonoBehaviour
 
         // Load stage spawner for respawning player
         Instantiate(enemySpawner[StaticGameData.stage]);
+        Instantiate(background[StaticGameData.stage]);
         spawners = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Enemy_Spawner_SpawnerManager>();
 
         // Start the initial spawn
@@ -68,8 +70,10 @@ public class System_GameSetup : MonoBehaviour
     {
         if (isBossDead)
         {
+            pauseSetter.isAvaliable = false;
             Player_MovemovementControl player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_MovemovementControl>();
             player.setBossDead(isBossDead);
+            player.Stop();
             player.isAllowMoving = false;
             isBossDead = false;
             

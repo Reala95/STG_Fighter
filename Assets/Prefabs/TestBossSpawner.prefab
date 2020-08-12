@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6310399653103239097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877696487163897209}
+  - component: {fileID: 5010118649999471072}
+  - component: {fileID: 8266066926062347216}
+  m_Layer: 0
+  m_Name: TestBossSpawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &877696487163897209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310399653103239097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0285558, y: -0.6848462, z: -22.645777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5010118649999471072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310399653103239097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f515fdd035853e43b2fd6c68485a456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveOrder: 00000000
+  waveInterval:
+  - 3
+  destroyWhenDone: 1
+--- !u!114 &8266066926062347216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310399653103239097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a247ba87ca111794fa2bb2e7a5ac935e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveNum: 14
+  enemyPrefab:
+  - {fileID: 7727422240463668082, guid: 74e6e64d5a8f09e44b5dd13bc54cbfa7, type: 3}
+  P2PMovementDataJson: {fileID: 4900000, guid: 63509abdda5e5174fb7daafb8ef2a898, type: 3}
+  SpecialMovementDataJson: {fileID: 4900000, guid: aeff6e2e2daf53d42ab977e52e5d8b71,
+    type: 3}
+  FireModeDataJson: {fileID: 4900000, guid: e531c06a72d5e4b40bb67893f2e3f597, type: 3}
+  spawnOrder: 00000000
+  movementOrder: 00000000
+  spMovementOrder: 00000000
+  firemodeOrder: 00000000
+  spawnInterval:
+  - 0
+  isLooping: 0

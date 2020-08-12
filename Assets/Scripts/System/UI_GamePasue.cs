@@ -9,6 +9,12 @@ public class UI_GamePasue : MonoBehaviour
     public bool isPaused;
     public bool isAvaliable;
 
+    public GameObject fadingScreenGO;
+    public UI_ScreenFading fadingScreen;
+    public AudioSource stageBGM;
+    public AudioSource bossBGM;
+    bool bgmFading = false;
+
     public string openSEName;
     AudioSource openSE;
     public string closeSEName;
@@ -19,6 +25,10 @@ public class UI_GamePasue : MonoBehaviour
     {
         openSE = GameObject.Find(openSEName).GetComponent<AudioSource>();
         closeSE = GameObject.Find(closeSEName).GetComponent<AudioSource>();
+        if(Time.timeScale != 1.0f)
+        {
+            Time.timeScale = 1.0f;
+        } 
     }
 
     // Update is called once per frame
@@ -44,12 +54,22 @@ public class UI_GamePasue : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
             }
         }
+        if (bgmFading)
+        {
+            if (stageBGM.isPlaying)
+            {
+                stageBGM.volume = Mathf.Max(0, (stageBGM.volume - 0.02f));
+            }
+            else
+            {
+                bossBGM.volume = Mathf.Max(0, (bossBGM.volume - 0.02f));
+            }
+        }
     }
 
     public void resume()
     {
         isPaused = false;
-        Time.timeScale = 1.0f;
         pasueMenu.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
@@ -58,19 +78,24 @@ public class UI_GamePasue : MonoBehaviour
     public void returnToTitle()
     {
         isPaused = false;
-        Time.timeScale = 1.0f;
         pasueMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(StaticGameData.scenesName_Title);
+        fadingScreen.changeScene(StaticGameData.scenesName_Title);
+        fadingScreenGO.SetActive(true);
+        bgmFading = true;
+        fadingScreen.inAnimate = true;
     }
 
     public void restart()
     {
         isPaused = false;
-        Time.timeScale = 1.0f;
         pasueMenu.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
-        SceneManager.LoadScene(StaticGameData.scenesName_Game);
+        fadingScreen.changeScene(StaticGameData.scenesName_Game);
+        fadingScreenGO.SetActive(true);
+        bgmFading = true;
+        fadingScreen.inAnimate = true;
+        
     }
 }
